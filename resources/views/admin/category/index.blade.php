@@ -1,6 +1,13 @@
 @extends('layouts.admin')
 @section('title','Gestión de categorías')
 @section('styles')
+<style type="text/css">
+.unstyled-button{
+    border: none;
+    padding: 0;
+    background: none;
+}
+</style>
 
 @endsection
 @section('options')
@@ -34,8 +41,8 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                               <a href="{{route('categories.create')}}" class="dropdown-item">Agregar</a>
-                              {{--  <button class="dropdown-item" type="button">Another action</button>
-                              <button class="dropdown-item" type="button">Something else here</button>  --}}
+                               {{-- <button class="dropdown-item" type="button">Another action</button>
+                              <button class="dropdown-item" type="button">Something else here</button> --}}
                             </div>
                           </div>
                     </div>

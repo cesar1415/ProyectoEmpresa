@@ -1,6 +1,7 @@
 <?php
 
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,7 @@ Route::resource('sales', 'SaleController')->names('sales');
 Route::get('/prueba', function () {
     return view('prueba');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
