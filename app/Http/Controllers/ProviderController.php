@@ -29,7 +29,7 @@ class ProviderController extends Controller
     }
     public function edit(Provider $provider)
     {
-        return view('admin.provider.show', compact('provider'));
+        return view('admin.provider.edit', compact('provider'));
     }
     public function update(UpdateRequest $request, Provider $provider)
     {
