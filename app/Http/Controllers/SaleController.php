@@ -12,7 +12,13 @@ use Carbon\Carbon;
 use App\Product;
 use App\Purchase;
 
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
+use Mike42\Escpos\Printer;
+use Mike42\Escpos\EscposImage;
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+
 use Barryvdh\DomPDF\Facade as PDF;
+use PhpParser\Node\Stmt\TryCatch;
 
 class SaleController extends Controller
 {
@@ -79,5 +85,29 @@ class SaleController extends Controller
         }
         $pdf = PDF:: loadView('admin.sale.pdf', compact('sale', 'subtotal', 'saleDetails'));
         return $pdf->download('Reporte_de_venta_'.$sale->id.'.pdf');
+    }
+
+    public function print(Sale $sale){
+        try {
+            $subtotal = 0 ;
+        $saleDetails = $sale->saleDetails;
+        foreach ($saleDetails as $saleDetail) {
+            $subtotal += $saleDetail->quantity*$saleDetail->price-$saleDetail->quantity* $saleDetail->price*$saleDetail->discount/100;
+        }
+
+        $printer_name = "TM20";
+            $connector = new WindowsPrintConnector($printer_name);
+            $printer = new Printer($connector);
+
+            $printer->text("€ 9,95\n");
+
+            $printer->cut();
+            $printer->close();
+
+        return redirect()->back();
+
+      } catch (\Throwable $th) {
+          return redirect()->back();
+      }
     }
 }

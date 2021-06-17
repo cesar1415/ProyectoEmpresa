@@ -16,7 +16,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "mike42/escpos-php": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
