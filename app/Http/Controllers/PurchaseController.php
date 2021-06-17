@@ -11,6 +11,8 @@ use App\Http\Requests\Purchase\UpdateRequest;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
+use Barryvdh\DomPDF\Facade as PDF;
+
 class PurchaseController extends Controller
 {
     public function __construct()
@@ -65,5 +67,15 @@ class PurchaseController extends Controller
     {
         // $purchase->delete();
         // return redirect()->route('purchases.index');
+    }
+    public function pdf(Purchase $purchase)
+    {
+        $subtotal = 0 ;
+        $purchaseDetails = $purchase->purchaseDetails;
+        foreach ($purchaseDetails as $purchaseDetail) {
+            $subtotal += $purchaseDetail->quantity * $purchaseDetail->price;
+        }
+        $pdf = PDF:: loadView('admin.purchase.pdf', compact('purchase', 'subtotal', 'purchaseDetails'));
+        return $pdf->download('Reporte_de_compra_'.$purchase->id.'.pdf');
     }
 }

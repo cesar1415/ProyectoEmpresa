@@ -25,10 +25,10 @@ class StoreRequest extends FormRequest
     {
         return [
         'name'=>'string|required|max:255',
-        'dni'=>'string|required|unique:clients|min:8|max:8',
-        'ruc'=>'nullable|string|unique:clients|min:11|max:11',
+        'dni'=>'string|required|unique:clients',
+        'ruc'=>'nullable|string|unique:clients',
         'address'=>'nullable|string|max:255',
-        'phone'=>'string|nullable|unique:clients|min:9|max:9',
+        'phone'=>'string|nullable|unique:clients',
         'email'=>'string|nullable|unique:clients|max:255|email:rfc,dns',
         ];
     }
@@ -42,21 +42,21 @@ class StoreRequest extends FormRequest
             'dni.string'=>'El valor no es correcto.',
             'dni.required'=>'Este campo es requerido.',
             'dni.unique'=>'Este DNI ya se encuentra registrado.',
-            'dni.min'=>'Se requiere de 8 caracteres.',
-            'dni.max'=>'Solo se permite 8 caracteres.',
+            // 'dni.min'=>'Se requiere de 8 caracteres.',
+            // 'dni.max'=>'Solo se permite 8 caracteres.',
 
             'ruc.string'=>'El valor no es correcto.',
             'ruc.unique'=>'El numero de RUC ya se encuentra registrado.',
-            'ruc.min'=>'Se requiere de 11 caracteres.',
-            'ruc.max'=>'Solo se permite 11 caracteres.',
+            // 'ruc.min'=>'Se requiere de 11 caracteres.',
+            // 'ruc.max'=>'Solo se permite 11 caracteres.',
 
             'address.string'=>'El valor no es correcto.',
             'address.max'=>'Solo se permite 255 caracteres.',
 
             'phone.string'=>'El valor no es correcto.',
             'phone.unique'=>'El numero de celular ya se encuentra registrado.',
-            'phone.min'=>'Se requiere de 9 caracteres.',
-            'phone.max'=>'Solo se permite 9 caracteres.',
+            // 'phone.min'=>'Se requiere de 9 caracteres.',
+            // 'phone.max'=>'Solo se permite 9 caracteres.',
 
             'email.string'=>'El valor no es correcto.',
             'email.unique'=>'La direccion de correo electronico ya se encuentra registrado.',
