@@ -37,7 +37,7 @@ class PurchaseController extends Controller
             'purchase_date'=>Carbon::now('America/Lima'),
 
         ]);
-        foreach ($request->product_id as $key => $product) {
+        foreach ($request->product_id as $key => $purchase) {
             $results[] = array("product_id"=>$request->product_id[$key],
             "quantity"=>$request->quantity[$key], "price"=>$request->price[$key]);
         }
@@ -77,5 +77,20 @@ class PurchaseController extends Controller
         }
         $pdf = PDF:: loadView('admin.purchase.pdf', compact('purchase', 'subtotal', 'purchaseDetails'));
         return $pdf->download('Reporte_de_compra_'.$purchase->id.'.pdf');
+    }
+    public function upload(Request $request, Purchase $purchase)
+    {
+        // $purchase->update($request->all());
+        // return redirect()->route('purchases.index');
+    }
+    public function change_status(Purchase $purchase)
+    {
+        if ($purchase->status == 'VALID') {
+            $purchase->update(['status'=>'CANCELED']);
+            return redirect()->back();
+        } else {
+            $purchase->update(['status'=>'VALID']);
+            return redirect()->back();
+        }
     }
 }
