@@ -40,9 +40,17 @@ Route::resource('printers', 'PrinterController')->names('printers')->only([
     'index', 'update'
 ]);
 Route::get('purchases/upload/{purchase}', 'PurchaseController@upload')->name('upload.purchases');
-Route::get('change_status/products/{product}', 'ProductController@change_status')->name('upload.purchases');
-Route::get('change_status/purchases/{purchase}', 'PurchaseController@change_status')->name('upload.purchases');
-Route::get('change_status/sales/{sale}', 'SaleController@change_status')->name('upload.purchases');
+
+Route::get('change_status/products/{product}', 'ProductController@change_status')->name('change_status.products');
+Route::get('change_status/purchases/{purchase}', 'PurchaseController@change_status')->name('change_status.purchases');
+Route::get('change_status/sales/{sale}', 'SaleController@change_status')->name('change_status.sales');
+
+
+Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.day');
+Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports.date');
+
+Route::post('sales/report_results', 'ReportController@report_results')->name('report_results');
+
 Route::get('/prueba', function () {
     return view('prueba');
 });
