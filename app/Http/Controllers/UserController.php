@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Caffeinated\Shinobi\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,6 +22,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->all());
+        $user->update(['password'=> Hash::make($request->password)]);
         $user->roles()->sync($request->get('roles'));
         return redirect()->route('users.index');
     }
