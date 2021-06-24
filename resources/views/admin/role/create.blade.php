@@ -30,27 +30,28 @@
                     </div>
                     {!! Form::open(['route'=>'roles.store', 'method'=>'POST']) !!}
 
-
                     <div class="form-group">
-                        <label for="">Nombre</label>
-                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="slug">Slug</label>
-                        <input type="text" name="slug" id="slug" class="form-control" placeholder="" aria-describedby="helpId">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Descripcion</label>
+                        <label for="name">Nombre</label>
+                        <input type="text"
+                          class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="slug">Slug</label>
+                          <input type="text"
+                            class="form-control" name="slug" id="slug" aria-describedby="helpId" placeholder="">
+                        </div>
+                      <div class="form-group">
+                        <label for="description">Descripción</label>
                         <textarea class="form-control" name="description" id="description" rows="3"></textarea>
-                    </div>
+                      </div>
+
 
                     @include('admin.role._form')
-
-                    <button type="submit" class="btn btn-primary mr-2">Registrar</button>
-                    <a href="{{route('roles.index')}}" class="btn btn-light">
+                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                     <a href="{{route('roles.index')}}" class="btn btn-light">
                         Cancelar
-                    </a>
-                    {!! Form::close() !!}
+                     </a>
+                     {!! Form::close() !!}
                 </div>
                 {{--  <div class="card-footer text-muted">
                     {{$roles->render()}}

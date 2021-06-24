@@ -25,6 +25,13 @@ class SaleController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('can:sales.create')->only(['create','store']);
+        $this->middleware('can:sales.index')->only(['index']);
+        $this->middleware('can:sales.show')->only(['show']);
+
+        $this->middleware('can:change.status.sales')->only(['change_status']);
+        $this->middleware('can:sales.pdf')->only(['pdf']);
+        $this->middleware('can:sales.print')->only(['print']);
     }
     public function index()
     {

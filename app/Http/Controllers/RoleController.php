@@ -3,11 +3,23 @@
 namespace App\Http\Controllers;
 
 use Caffeinated\Shinobi\Models\Permission;
-use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Role;
+use Illuminate\Http\Request;
+
 
 class RoleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        $this->middleware('can:roles.create')->only(['create','store']);
+        $this->middleware('can:roles.index')->only(['index']);
+        $this->middleware('can:roles.edit')->only(['edit','update']);
+        $this->middleware('can:roles.show')->only(['show']);
+        $this->middleware('can:roles.destroy')->only(['destroy']);
+    }
 
     public function index()
     {
@@ -32,7 +44,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $permissions = Permission::get();
-        return view('admin.role.edit', compact('role','permissions'));
+        return view('admin.role.edit', compact('role', 'permissions'));
     }
     public function update(Request $request, Role $role)
     {

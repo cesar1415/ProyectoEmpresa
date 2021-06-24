@@ -8,6 +8,15 @@ use App\Http\Requests\Category\StoreRequest;
 use App\Http\Requests\Category\UpdateRequest;
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('can:categories.create')->only(['create','store']);
+        $this->middleware('can:categories.index')->only(['index']);
+        $this->middleware('can:categories.edit')->only(['edit','update']);
+        $this->middleware('can:categories.show')->only(['show']);
+        $this->middleware('can:categories.destroy')->only(['destroy']);
+    }
     public function index()
     {
         $categories = Category::get();

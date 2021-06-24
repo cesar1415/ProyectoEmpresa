@@ -11,6 +11,19 @@ use App\Provider;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('can:product.create')->only(['create','store']);
+        $this->middleware('can:product.index')->only(['index']);
+        $this->middleware('can:product.edit')->only(['edit','update']);
+        $this->middleware('can:product.show')->only(['show']);
+        $this->middleware('can:product.destroy')->only(['destroy']);
+
+        $this->middleware('can:change.status.products')->only(['change_status']);
+
+
+    }
     public function index()
     {
         $products = Product::get();
