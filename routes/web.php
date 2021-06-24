@@ -51,6 +51,9 @@ Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports
 
 Route::post('sales/report_results', 'ReportController@report_results')->name('report_results');
 
+Route::resource('users', 'UserController')->names('users');
+Route::resource('roles', 'RoleController')->names('roles');
+
 Route::get('/prueba', function () {
     return view('prueba');
 });
