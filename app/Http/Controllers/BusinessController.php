@@ -15,7 +15,7 @@ class BusinessController extends Controller
         $this->middleware('can:business.edit')->only(['update']);
     }
     public function index(){
-        $business = Business::where('id', 1)->firstOrFail;
+        $business = Business::where('id', 1)->firstOrFail();
         return view('admin.business.index', compact('business'));
     }
     public function update(UpdateRequest $request, Business $business)

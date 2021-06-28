@@ -15,7 +15,7 @@ class PrinterController extends Controller
         $this->middleware('can:printers.edit')->only(['update']);
     }
     public function index(){
-        $printer = Printer::where('id', 1)->firstOrFail;
+        $printer = Printer::where('id', 1)->firstOrFail();
         return view('admin.printer.index', compact('printer'));
     }
     public function update(UpdateRequest $request, Printer $printer)

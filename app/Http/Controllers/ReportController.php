@@ -13,10 +13,10 @@ class ReportController extends Controller
         $this->middleware('can:reports.date')->only(['reports_date']);
     }
     public function reports_day(){
-
+        return view('admin.business.index');
     }
     public function reports_date(){
-
+        return view('admin.business.index');
     }
     public function reports_results(Request $request){
 
