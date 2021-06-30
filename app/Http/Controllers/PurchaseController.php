@@ -8,10 +8,12 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\Purchase\StoreRequest;
 use App\Http\Requests\Purchase\UpdateRequest;
-use Illuminate\Support\Facades\Auth;
+use App\PurchaseDetails;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 use Barryvdh\DomPDF\Facade as PDF;
+
 
 class PurchaseController extends Controller
 {
@@ -26,6 +28,7 @@ class PurchaseController extends Controller
         $this->middleware('can:purchases.pdf')->only(['pdf']);
         $this->middleware('can:upload.purchases')->only(['upload']);
     }
+
     public function index()
     {
         $purchases = Purchase::get();
@@ -34,7 +37,7 @@ class PurchaseController extends Controller
     public function create()
     {
         $providers = Provider::get();
-        $products = Product::get();
+        $products = Product::where('status', 'ACTIVE')->get();
         return view('admin.purchase.create', compact('providers','products'));
     }
     public function store(StoreRequest $request)
@@ -42,11 +45,9 @@ class PurchaseController extends Controller
         $purchase = Purchase::create($request->all()+[
             'user_id'=>Auth::user()->id,
             'purchase_date'=>Carbon::now('America/Lima'),
-
         ]);
-        foreach ($request->product_id as $key => $purchase) {
-            $results[] = array("product_id"=>$request->product_id[$key],
-            "quantity"=>$request->quantity[$key], "price"=>$request->price[$key]);
+        foreach ($request->product_id as $key => $product) {
+            $results[] = array("product_id"=>$request->product_id[$key], "quantity"=>$request->quantity[$key], "price"=>$request->price[$key]);
         }
         $purchase->purchaseDetails()->createMany($results);
         return redirect()->route('purchases.index');
@@ -62,8 +63,8 @@ class PurchaseController extends Controller
     }
     public function edit(Purchase $purchase)
     {
-        $providers = Provider::get();
-        return view('admin.purchase.edit', compact('purchase'));
+        // $providers = Provider::get();
+        // return view('admin.purchase.edit', compact('purchase'));
     }
     public function update(UpdateRequest $request, Purchase $purchase)
     {
@@ -75,6 +76,7 @@ class PurchaseController extends Controller
         // $purchase->delete();
         // return redirect()->route('purchases.index');
     }
+
     public function pdf(Purchase $purchase)
     {
         $subtotal = 0 ;
@@ -82,14 +84,16 @@ class PurchaseController extends Controller
         foreach ($purchaseDetails as $purchaseDetail) {
             $subtotal += $purchaseDetail->quantity * $purchaseDetail->price;
         }
-        $pdf = PDF:: loadView('admin.purchase.pdf', compact('purchase', 'subtotal', 'purchaseDetails'));
+        $pdf = PDF::loadView('admin.purchase.pdf', compact('purchase', 'subtotal', 'purchaseDetails'));
         return $pdf->download('Reporte_de_compra_'.$purchase->id.'.pdf');
     }
-    public function upload(Request $request, Purchase $purchase)
+
+    public function upload(Request $reques, Purchase $purchase)
     {
         // $purchase->update($request->all());
         // return redirect()->route('purchases.index');
     }
+
     public function change_status(Purchase $purchase)
     {
         if ($purchase->status == 'VALID') {

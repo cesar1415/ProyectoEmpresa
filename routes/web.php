@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.day');
 Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports.date');
 
-Route::post('sales/report_results', 'ReportController@report_results')->name('report_results');
+Route::post('sales/report_results', 'ReportController@report_results')->name('report.results');
 
 Route::resource('business', 'BusinessController')->names('business')->only([
     'index', 'update'

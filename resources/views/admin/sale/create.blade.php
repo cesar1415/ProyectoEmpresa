@@ -68,6 +68,7 @@
         $("#price").val(datosProducto[2]);
         $("#stock").val(datosProducto[1]);
     }
+
     function agregar() {
         datosProducto = document.getElementById('product_id').value.split('_');
         product_id = datosProducto[0];
@@ -132,4 +133,4 @@
     }
     </script>
 
-@endsection
+    @endsection
