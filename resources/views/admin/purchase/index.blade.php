@@ -66,20 +66,34 @@
                                     </th>
                                     <td>{{$purchase->purchase_date}}</td>
                                     <td>{{$purchase->total}}</td>
-                                    <td>{{$purchase->status}}</td>
+
+                                    @if ($purchase->status == 'VALID')
+                                    <td>
+                                        <a class="jsgrid-button btn btn-success" href="{{route('change.status.purchases', $purchase)}}" title="Editar">
+                                            Activo<i class="fas fa-check"></i>
+                                        </a>
+                                        </td>
+                                    @else
+                                    <td>
+                                        <a class="jsgrid-button btn btn-danger" href="{{route('change.status.purchases', $purchase)}}" title="Editar">
+                                            Cancelado<i class="fas fa-times"></i>
+                                        </a>
+                                        </td>
+                                    @endif
+
                                     <td style="width: 50px;">
 
                                         {{-- <a  class="jsgrid-button jsgrid-edit-button" href="{{route('purchases.edit', $purchase)}}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a> --}}
 
-                                        {{-- <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button> --}}
-
                                         <a href="{{route('purchases.pdf', $purchase)}}" class="jsgrid-button jsgrid-edit-button"><i class="far fa-file-pdf"></i></a>
                                         {{-- <a href="#" class="jsgrid-button jsgrid-edit-button"><i class="fas fa-print"></i></a> --}}
                                         <a href="{{route('purchases.show', $purchase)}}" class="jsgrid-button jsgrid-edit-button"><i class="far fa-eye"></i></a>
+
+                                        <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
 
                                     </td>
                                 </tr>

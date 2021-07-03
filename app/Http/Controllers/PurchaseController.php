@@ -73,8 +73,8 @@ class PurchaseController extends Controller
     }
     public function destroy(Purchase $purchase)
     {
-        // $purchase->delete();
-        // return redirect()->route('purchases.index');
+        $purchase->delete();
+        return redirect()->route('purchases.index');
     }
 
     public function pdf(Purchase $purchase)
