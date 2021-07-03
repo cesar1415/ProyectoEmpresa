@@ -47,9 +47,9 @@ Route::get('sales/print/{sale}', 'SaleController@print')->name('sales.print');
 
 Route::get('purchases/upload/{purchase}', 'PurchaseController@upload')->name('upload.purchases');
 
-Route::get('change_status/products/{product}', 'ProductController@change_status')->name('change_status.products');
-Route::get('change_status/purchases/{purchase}', 'PurchaseController@change_status')->name('change_status.purchases');
-Route::get('change_status/sales/{sale}', 'SaleController@change_status')->name('change_status.sales');
+Route::get('change_status/products/{product}', 'ProductController@change_status')->name('change.status.products');
+Route::get('change_status/purchases/{purchase}', 'PurchaseController@change_status')->name('change.status.purchases');
+Route::get('change_status/sales/{sale}', 'SaleController@change_status')->name('change.status.sales');
 
 Route::resource('users', 'UserController')->names('users');
 Route::resource('roles', 'RoleController')->names('roles');
