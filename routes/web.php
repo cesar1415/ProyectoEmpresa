@@ -36,7 +36,7 @@ Route::resource('clients', 'ClientController')->names('clients');
 Route::resource('products', 'ProductController')->names('products');
 Route::resource('providers', 'ProviderController')->names('providers');
 Route::resource('purchases', 'PurchaseController')->names('purchases')->except([
-    'edit', 'update', 'destroy'
+    'edit', 'update',
 ]);
 Route::resource('sales', 'SaleController')->names('sales')->except([
     'edit', 'update', 'destroy'
