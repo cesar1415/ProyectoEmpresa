@@ -20,7 +20,8 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Panel administrador</a></li> <li class="breadcrumb-item"><a href="#">Proveedores</a></li>
+                <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
+                 <li class="breadcrumb-item"><a href="{{route('products.index')}}">Productos</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
             </ol>
         </nav>
@@ -104,9 +105,9 @@
 
                             {{-- <button class="btn btn-primary btn-block">{{$product->status}}</button> --}}
                             @if ($product->status == 'ACTIVE')
-                            <button class="btn btn-success btn-block">{{$product->status}}</button>
+                            <a href="{{route('change.status.products', $product)}}" class="btn btn-success btn-block">Activo</a>
                             @else
-                            <button class="btn btn-danger btn-block">{{$product->status}}</button>
+                            <a href="{{route('change.status.products', $product)}}" class="btn btn-danger btn-block">Desactivado</a>
                             @endif
 
                         </div>
@@ -138,6 +139,11 @@
                                             <i class="fas fa-mobile mr-1"></i>Precio de venta</strong>
                                         <p class="text-muted">
                                             {{$product->sell_price}}
+                                        </p>
+                                        <hr>
+                                        <strong><i class="fas fa-qrcode"></i> Código de barras</strong>
+                                        <p class="text-muted">
+                                            {!!DNS1D::getBarcodeHTML($product->code, 'EAN13'); !!}
                                         </p>
                                         <hr>
                                     </div>

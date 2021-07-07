@@ -18,7 +18,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('home')}}">
                 <i class="fa fa-home menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">Panel Principal</span>
             </a>
         </li>
         <li class="nav-item">

@@ -31,24 +31,25 @@
                     {!! Form::open(['route'=>'users.store', 'method'=>'POST']) !!}
 
                     <div class="form-group">
-                        <label for="">Nombre</label>
+                        <label for="name">Nombre</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo electronico</label>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Correo electrónico</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
-                    </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="password">Contraseña</label>
+                          <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+                      </div>
 
                     @include('admin.user._form')
-                    <button type="submit" class="btn btn-primary mr-2">Registrar</button>
-                    <a href="{{route('users.index')}}" class="btn btn-light">
+                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                     <a href="{{route('users.index')}}" class="btn btn-light">
                         Cancelar
-                    </a>
-                    {!! Form::close() !!}
+                     </a>
+                     {!! Form::close() !!}
                 </div>
                 {{--  <div class="card-footer text-muted">
                     {{$users->render()}}

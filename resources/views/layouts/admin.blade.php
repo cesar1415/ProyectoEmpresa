@@ -64,8 +64,8 @@
                             <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"
                             onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
-                                <i class="fas fa-power-off text-primary"></i>
-                                Logout
+                                <i class="fas fa-sign-out-alt text-primary"></i>
+                                Cerrar Sesion
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
