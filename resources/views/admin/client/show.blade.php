@@ -6,7 +6,7 @@
 @section('create')
 
 @endsection
-@section('options')
+@section('c')
 
 @endsection
 @section('preference')
