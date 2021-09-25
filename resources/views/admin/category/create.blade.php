@@ -36,9 +36,16 @@
                     </a>
                     {!! Form::close() !!}
                 </div>
-                {{--  <div class="card-footer text-muted">
-                    {{$categories->render()}}
-                </div>  --}}
+                @if ( $arrt)
+                  <div class="row">
+                      <div class="col-12">
+                        <div class="alert alert-success">
+                            {{$arrt}}
+                        </div>
+
+                      </div>
+                  </div>
+                @endif
             </div>
         </div>
     </div>

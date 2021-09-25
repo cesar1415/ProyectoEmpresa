@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
 class StoreRequest extends FormRequest
 {
     /**
@@ -43,5 +43,15 @@ class StoreRequest extends FormRequest
             'sell_price.required'=>'El campo es requerido.',
 
         ];
+    }
+    public function response(array $errors)
+    {
+        if ($this->expectsJson()) {
+            return new JsonResponse($errors, 422);
+        }
+
+        return $this->redirector->to($this->getRedirectUrl())
+            ->withInput($this->except($this->dontFlash))
+            ->withErrors($errors, $this->errorBag);
     }
 }

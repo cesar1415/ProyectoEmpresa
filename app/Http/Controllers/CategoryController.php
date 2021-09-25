@@ -6,7 +6,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\Category\StoreRequest;
 use App\Http\Requests\Category\UpdateRequest;
-
+use Illuminate\Validation\ValidationException;
 class CategoryController extends Controller
 {
     public function __construct()
@@ -29,8 +29,15 @@ class CategoryController extends Controller
     }
     public function store(StoreRequest $request)
     {
-        Category::create($request->all());
-        return redirect()->route('categories.index');
+
+        $attr = $request->validated();
+        if($attr) {
+            Category::create($request->all());
+            return redirect()->route('categories.index',compact("attr"))->with('message', 'Categoria creada');
+        }else {
+            return redirect()->route('categories.index',compact("attr"))->with('error', 'Error al crear la categoria');
+        }
+
     }
     public function show(Category $category)
     {
@@ -42,12 +49,19 @@ class CategoryController extends Controller
     }
     public function update(UpdateRequest $request, Category $category)
     {
-        $category->update($request->all());
-        return redirect()->route('categories.index');
+        $attr = $request->validated();
+        if($attr) {
+            $category->update($request->all());
+            return redirect()->route('categories.index',compact("attr"))->with('message', 'Categoria actualizada');
+        }else {
+            return redirect()->route('categories.index',compact("attr"))->with('error', 'Error al actualizar la categoria');
+        }
+
+
     }
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('message', 'Categoria eliminada');
     }
 }

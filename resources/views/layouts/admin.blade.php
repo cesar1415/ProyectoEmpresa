@@ -112,9 +112,35 @@
             @include('layouts._nav')
             <!-- partial -->
             <div class="main-panel">
+                @if (session()->has('message'))
+                  <div class="row d-flex justify-content-center">
+                      <div class="col-10">
+                        <div class="alert alert-success">
+                            {{session()->get('message')}}
+                        </div>
+
+                      </div>
+                  </div>
+                @endif
                 @yield('content')
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
+
+                @if ($errors->any())
+                    <div class="row  d-flex justify-content-center mt-3">
+                        <div class="col-md-10">
+                            <div class="alert alert-warning alert-dismissable" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h3 class="alert-heading font-size-h4 font-w400">Error !!</h3>
+                                @foreach ($errors->all() as $error)
+                                    <p class="mb-0">{{ $error }}</p>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.
