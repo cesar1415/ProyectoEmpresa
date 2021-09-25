@@ -47,7 +47,7 @@ class ProductController extends Controller
             'image'=>$image_name,
         ]);
         $product->update(['code'=>$product->id]);
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('message', 'Se ha creado un nuevo producto!');
     }
     public function show(Product $product)
     {
@@ -71,7 +71,7 @@ class ProductController extends Controller
             'image'=>$image_name,
         ]);
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('message', 'Se ha actualizado el producto!');
     }
     public function destroy(Product $product)
     {
@@ -85,7 +85,7 @@ class ProductController extends Controller
             return redirect()->back();
         } else {
             $product->update(['status'=>'ACTIVE']);
-            return redirect()->back();
+            return redirect()->back()->with('message', 'Se ha eliminado un nuevo producto!');
         }
 
     }

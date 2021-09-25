@@ -24,7 +24,13 @@ class UsersTableSeeder extends Seeder
             'email'=>'cm740614@gmail.com',
             'password'=>'$2y$10$gtplFg2pyNPqlw0Hfn94euDsUmSBpKsxYrBxVceq8Jyr5pCRzhzrK',
         ]);
+        $user2 = User::create([
+            'name'=>'Poseidon',
+            'email'=>'nemo@gmail.com',
+            'password'=>  bcrypt(12345),
+        ]);
 
         $user->roles()->sync(1);
+        $user2->roles()->sync(1);
     }
 }

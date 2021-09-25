@@ -12,7 +12,8 @@ class ProviderController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('can:providers.create')->only(['create','store']);
+        $this->middleware('can:providers.create')->only(['create']);
+        $this->middleware('can:providers.store')->only(['store']);
         $this->middleware('can:providers.index')->only(['index']);
         $this->middleware('can:providers.edit')->only(['edit','update']);
         $this->middleware('can:providers.show')->only(['show']);
@@ -25,12 +26,19 @@ class ProviderController extends Controller
     }
     public function create()
     {
-        return view('admin.provider.create');
+        $providers = Provider::all();
+        if($providers){
+        return view('admin.provider.create', compact('providers'));
+        }else {
+            return view('admin.provider.create');
+        }
+
     }
     public function store(StoreRequest $request)
     {
+        var_dump($request);
         Provider::create($request->all());
-        return redirect()->route('providers.index');
+        return redirect()->route('providers.index')->with('message', $request->messages());
     }
     public function show(Provider $provider)
     {

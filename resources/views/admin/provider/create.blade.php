@@ -32,27 +32,27 @@
 
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" required>
+                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" >
                     </div>
 
                     <div class="form-group">
                         <label for="email">Correo electronico</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="ejemplo@gmail.com" required>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="ejemplo@gmail.com" >
                     </div>
 
                     <div class="form-group">
                         <label for="ruc_number">Numero de RUC</label>
-                        <input type="numbre" class="form-control" name="ruc_number" id="ruc_number" aria-describedby="helpId" required>
+                        <input type="numbre" class="form-control" name="ruc_number" id="ruc_number" aria-describedby="helpId" >
                     </div>
 
                     <div class="form-group">
                         <label for="address">Direccion</label>
-                        <input type="text" class="form-control" name="address" id="address" aria-describedby="helpId" required>
+                        <input type="text" class="form-control" name="address" id="address" aria-describedby="helpId" >
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Numero de contacto</label>
-                        <input type="numbre" class="form-control" name="phone" id="phone" aria-describedby="helpId" required>
+                        <input type="numbre" class="form-control" name="phone" id="phone" aria-describedby="helpId" >
                     </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
@@ -61,9 +61,9 @@
                     </a>
                     {!! Form::close() !!}
                 </div>
-                {{--  <div class="card-footer text-muted">
-                    {{$providers->render()}}
-                </div>  --}}
+                 <div class="card-footer text-muted">
+                    {{$providers}}
+                </div>
             </div>
         </div>
     </div>

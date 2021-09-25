@@ -35,7 +35,7 @@ class RoleController extends Controller
     {
         $role = Role::create($request->all());
         $role->permissions()->sync($request->get('permissions'));
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with('message', 'Se ha creado un nuevo rol!');
     }
     public function show(Role $role)
     {
