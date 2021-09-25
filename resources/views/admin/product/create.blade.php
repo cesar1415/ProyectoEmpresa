@@ -30,32 +30,44 @@
                     </div>
                     {!! Form::open(['route'=>'products.store', 'method'=>'POST','files'=>true]) !!}
 
-                    <div class="form-group">
+                    <div class="form-group @if($errors->has('name')) has-danger @endif">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" required>
+                        <input type="text" class="form-control @if($errors->has('name')) form-control-danger @endif" name="name" id="name" aria-describedby="helpId" >
+                        @if ($errors->has('name'))
+                        <label  class="error mt-2 text-danger" for="firstname">{{ $errors->first('name') }}</label>
+                        @endif
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group  @if($errors->has('sell_price')) has-danger @endif">
                         <label for="sell_price">Precio de venta</label>
-                        <input type="number" class="form-control" name="sell_price" id="sell_price" aria-describedby="helpId" required>
+                        <input type="number" max="999999999" class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
+                        @if ($errors->has('sell_price'))
+                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('sell_price') }}</label>
+                        @endif
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group @if($errors->has('category_id')) has-danger @endif">
                         <label for="category_id">Categoria</label>
-                        <select class="form-control" name="category_id" id="category_id">
+                        <select class="form-control @if($errors->has('category_id')) form-control-danger @endif" name="category_id" id="category_id">
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
+                        @if ($errors->has('category_id'))
+                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('category_id') }}</label>
+                        @endif
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group @if($errors->has('provider_id')) has-danger @endif">
                         <label for="provider_id">Proveedor</label>
-                        <select class="form-control" name="provider_id" id="provider_id">
+                        <select class="form-control @if($errors->has('provider_id')) form-control-danger @endif" name="provider_id" id="provider_id">
                             @foreach ($providers as $provider)
                                 <option value="{{$provider->id}}">{{$provider->name}}</option>
                             @endforeach
                         </select>
+                        @if ($errors->has('provider_id'))
+                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('provider_id') }}</label>
+                        @endif
                     </div>
                     {{-- <div class="custom-file mb-4">
                         <input type="file" class="custom-file-input" name="picture" id="picture" lang="es">
@@ -68,6 +80,9 @@
                             </small>
                         </h4>
                         <input type="file" name="picture" id="picture" class="dropify" />
+                        @if ($errors->has('picture'))
+                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('picture') }}</label>
+                        @endif
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
                     <a href="{{route('products.index')}}" class="btn btn-light">

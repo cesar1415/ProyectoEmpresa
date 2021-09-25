@@ -31,14 +31,22 @@
 
                     {!! Form::model($product,['route'=>['products.update',$product], 'method'=>'PUT','files'=>true]) !!}
 
-                    <div class="form-group">
+                    <div class="form-group @if($errors->has('name')) has-danger @endif">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{$product->name}}" aria-describedby="helpId" required>
+                        <input type="text" class="form-control @if($errors->has('name')) form-control-danger @endif" name="name" id="name" value="{{$product->name}}" aria-describedby="helpId" >
+                        @if ($errors->has('name'))
+                        <label  class="error mt-2 text-danger" for="firstname">{{ $errors->first('name') }}</label>
+                        @endif
                     </div>
-                    <div class="form-group">
+
+                    <div class="form-group  @if($errors->has('sell_price')) has-danger @endif">
                         <label for="sell_price">Precio de venta</label>
-                        <input type="number" class="form-control" name="sell_price" id="sell_price" value="{{$product->sell_price}}" aria-describedby="helpId" required>
+                        <input type="number" value="{{$product->sell_price}}" max="999999999" class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
+                        @if ($errors->has('sell_price'))
+                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('sell_price') }}</label>
+                        @endif
                     </div>
+
 
                     <div class="form-group">
                         <label for="category_id">Categoria</label>
@@ -79,6 +87,9 @@
                             </small>
                         </h4>
                         <input type="file" name="picture" id="picture" class="dropify" />
+                        @if ($errors->has('picture'))
+                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('picture') }}</label>
+                        @endif
                     </div>
 
 

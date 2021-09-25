@@ -36,9 +36,17 @@ class ProviderController extends Controller
     }
     public function store(StoreRequest $request)
     {
-        var_dump($request);
-        Provider::create($request->all());
-        return redirect()->route('providers.index')->with('message', $request->messages());
+          /* $validate = $request->validate();
+          if($validate) {
+            Provider::create($request->all());
+            return redirect()->route('providers.index')->with('message', 'Proveedor creado de forma exitosa !');
+          }else {
+
+            return redirect()->route('providers.index')->with('error', 'Error al crear el proveedor !');
+          } */
+          Provider::create($request->all());
+          return redirect()->route('providers.index')->with('message', 'Proveedor creado de forma exitosa !');
+
     }
     public function show(Provider $provider)
     {
@@ -50,12 +58,22 @@ class ProviderController extends Controller
     }
     public function update(UpdateRequest $request, Provider $provider)
     {
+
+
+       /*  $validate = $request->validate();
+        if($validate) {
+            $provider->update($request->all());
+            return redirect()->route('providers.index')->with('message', 'Proveedor creado de forma exitosa !');
+        }else {
+
+          return redirect()->route('providers.index')->with('error', 'Error al crear el proveedor !');
+        } */
         $provider->update($request->all());
-        return redirect()->route('providers.index');
+        return redirect()->route('providers.index')->with('message', 'Proveedor actualizado de forma exitosa !');
     }
     public function destroy(Provider $provider)
     {
         $provider->delete();
-        return redirect()->route('providers.index');
+        return redirect()->route('providers.index')->with('message', 'Proveedor eliminado !');;
     }
 }

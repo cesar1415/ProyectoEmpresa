@@ -36,7 +36,7 @@
                     </a>
                     {!! Form::close() !!}
                 </div>
-                @if ( $arrt)
+              {{--   @if ( $arrt)
                   <div class="row">
                       <div class="col-12">
                         <div class="alert alert-success">
@@ -45,7 +45,7 @@
 
                       </div>
                   </div>
-                @endif
+                @endif --}}
             </div>
         </div>
     </div>

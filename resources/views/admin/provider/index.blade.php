@@ -32,19 +32,20 @@
             <div class="card">
                 <div class="card-body">
 
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between mb-3">
                         <h4 class="card-title">Proveedores</h4>
                         {{--  <i class="fas fa-ellipsis-v"></i>  --}}
-                        <div class="btn-group">
+                        <a  href="{{route('providers.create')}}" class="btn btn-success ">Agregar</a>
+                        {{-- <div class="btn-group">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-ellipsis-v"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a href="{{route('providers.create')}}" class="dropdown-item">Agregar</a>
+                            <div class="dropdown-menu dropdown-menu-right"> --}}
+
                                {{-- <button class="dropdown-item" type="button">Another action</button>
                               <button class="dropdown-item" type="button">Something else here</button> --}}
-                            </div>
-                          </div>
+                           {{--  </div>
+                          </div> --}}
                     </div>
 
                     <div class="table-responsive">

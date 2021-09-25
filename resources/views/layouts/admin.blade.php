@@ -83,7 +83,9 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
-            <div class="theme-setting-wrapper">
+
+
+           {{--  <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
                 <div id="theme-settings" class="settings-panel">
                     <i class="settings-close fa fa-times"></i>
@@ -105,7 +107,9 @@
                         <div class="tiles default"></div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
+
             @yield('preference')
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
@@ -115,8 +119,11 @@
                 @if (session()->has('message'))
                   <div class="row d-flex justify-content-center">
                       <div class="col-10">
-                        <div class="alert alert-success">
+                        <div class="alert alert-success"  role="alert">
                             {{session()->get('message')}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
 
                       </div>
@@ -126,26 +133,12 @@
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
 
-                @if ($errors->any())
-                    <div class="row  d-flex justify-content-center mt-3">
-                        <div class="col-md-10">
-                            <div class="alert alert-warning alert-dismissable" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <h3 class="alert-heading font-size-h4 font-w400">Error !!</h3>
-                                @foreach ($errors->all() as $error)
-                                    <p class="mb-0">{{ $error }}</p>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                @endif
+
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.
                             Todos los derechos reservados.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">Texvn Online</a> </> <i class="far fa-heart text-danger"></i></span>
+
                     </div>
                 </footer>
                 <!-- partial -->
