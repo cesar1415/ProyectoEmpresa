@@ -26,9 +26,10 @@ class UpdateRequest extends FormRequest
         return [
             'name'=>'string|required|unique:products,name,'.$this->route('product')->id.'|max:255',
 
-            'sell_price'=>'required|',
+            'sell_price'=>'max:9|required',
             'category_id'=>'integer|required|exists:App\Category,id',
             'provider_id'=>'integer|required|exists:App\Provider,id',
+            'picture'=> 'mimes:jpeg,bmp,png,jpg|nullable'
         ];
     }
     public function messages()
@@ -42,6 +43,10 @@ class UpdateRequest extends FormRequest
 
 
             'sell_price.required'=>'El campo es requerido.',
+            'sell_price.max'=>'Solo se permiten 9 caracteres',
+
+
+            'picture.mimes'=>'El formato debe ser jpg , jpeg, png o bmp.',
 
             'category_id.integer'=>'El valor tiene que ser entero.',
             'category_id.required'=>'El campo es requerido.',

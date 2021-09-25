@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="form-group @if($errors->has('address')) has-danger @endif" >
-                            <label for="address">Direccion</label>
+                            <label for="address">Dirección</label>
                             <input type="text" class="form-control  @if($errors->has('address')) form-control-danger @endif" name="address" id="address" aria-describedby="helpId">
                             @if ($errors->has('address'))
                             <label  class="error mt-2 text-danger" >{{ $errors->first('address') }}</label>

@@ -26,7 +26,8 @@ class StoreRequest extends FormRequest
         return [
 
             'name'=>'string|required|unique:products|max:255',
-            'sell_price'=>'required|',
+            'sell_price'=>'max:9|required',
+            'picture'=> 'mimes:jpeg,bmp,png,jpg|nullable'
 
         ];
     }
@@ -37,10 +38,10 @@ class StoreRequest extends FormRequest
             'name.required'=>'El campo es requerido.',
             'name.unique'=>'El producto ya esta registrado.',
             'name.max'=>'Solo se permite 255 caracteres.',
-
-
-
+            'sell_price.max'=>'Solo se permiten 9 caracteres',
             'sell_price.required'=>'El campo es requerido.',
+            'picture.mimes'=>'El formato debe ser jpg , jpeg, png o bmp.'
+
 
         ];
     }

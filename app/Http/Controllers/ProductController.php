@@ -66,13 +66,11 @@ class ProductController extends Controller
             $file = $request->file('picture');
             $image_name = time().'_'.$file->getClientOriginalName();
             $file->move(public_path("/image"),$image_name);
+
+            $product->update($request->all()+[
+                'image'=>$image_name,
+            ]);
         }
-        $product->update($request->all()+[
-            'image'=>$image_name,
-        ]);
-
-
-
         return redirect()->route('products.index')->with('message', 'Se ha actualizado el producto!');
     }
     public function destroy(Product $product)

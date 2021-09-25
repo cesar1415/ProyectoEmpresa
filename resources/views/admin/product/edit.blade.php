@@ -26,7 +26,7 @@
                 <div class="card-body">
 
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Edicion de producto</h4>
+                        <h4 class="card-title">Edición de producto</h4>
                     </div>
 
                     {!! Form::model($product,['route'=>['products.update',$product], 'method'=>'PUT','files'=>true]) !!}
@@ -41,10 +41,10 @@
 
                     <div class="form-group  @if($errors->has('sell_price')) has-danger @endif">
                         <label for="sell_price">Precio de venta</label>
-                        <input type="number" value="{{$product->sell_price}}" max="999999999" class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
-                        @if ($errors->has('sell_price'))
-                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('sell_price') }}</label>
-                        @endif
+                        <input type="number" value="{{$product->sell_price}}"  class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
+                        @foreach ($errors->get('sell_price') as $message)
+                        <label  class="error mt-2 text-danger" for="">{{ $message }} </label>
+                        @endforeach
                     </div>
 
 
@@ -82,9 +82,9 @@
 
                     <div class="card-body">
                         <h4 class="card-title d-flex">Imagen de producto
-                          <small class="ml-auto align-self-end">
+                         {{--  <small class="ml-auto align-self-end">
                               <a href="dropify.html" class="font-weight-light" target="_blank">Seleccionar Archivo</a>
-                            </small>
+                            </small> --}}
                         </h4>
                         <input type="file" name="picture" id="picture" class="dropify" />
                         @if ($errors->has('picture'))
