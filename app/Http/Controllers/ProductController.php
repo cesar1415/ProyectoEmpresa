@@ -71,6 +71,8 @@ class ProductController extends Controller
             'image'=>$image_name,
         ]);
 
+
+
         return redirect()->route('products.index')->with('message', 'Se ha actualizado el producto!');
     }
     public function destroy(Product $product)
