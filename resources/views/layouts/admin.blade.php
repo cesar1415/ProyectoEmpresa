@@ -83,7 +83,7 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
-            <div class="theme-setting-wrapper">
+            {{-- <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
                 <div id="theme-settings" class="settings-panel">
                     <i class="settings-close fa fa-times"></i>
@@ -105,7 +105,7 @@
                         <div class="tiles default"></div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             @yield('preference')
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
