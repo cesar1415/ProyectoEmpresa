@@ -34,7 +34,7 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return[
-            'name.string'=>'El valor no es correcto.',
+            'name.string'=>'El nombre es requerido.',
             'name.required'=>'El campo es requerido.',
             'name.unique'=>'El producto ya esta registrado.',
             'name.max'=>'Solo se permite 255 caracteres.',
