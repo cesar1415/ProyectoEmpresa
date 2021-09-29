@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
 
-            'name'=>'string|required|unique:products|max:255',
+            'name'=>'required|unique:products|max:255',
             'sell_price'=>'max:9|required',
             'picture'=> 'mimes:jpeg,bmp,png,jpg|nullable'
 
@@ -34,7 +34,7 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'name.string'=>'Solo se permiten letras.',
+            // 'name.string'=>'Solo se permiten letras.',
             'name.required'=>'El campo es requerido.',
             'name.unique'=>'El producto ya esta registrado.',
             'name.max'=>'Solo se permite 255 caracteres.',

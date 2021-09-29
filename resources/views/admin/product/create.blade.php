@@ -40,7 +40,7 @@
 
                     <div class="form-group  @if($errors->has('sell_price')) has-danger @endif">
                         <label for="sell_price">Precio de venta</label>
-                        <input type="number"  class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
+                        <input type="number"  class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" value="{{old('sell_price')}}" >
 
                         @foreach ($errors->get('sell_price') as $message)
                         <label  class="error mt-2 text-danger" for="">{{ $message }} </label>

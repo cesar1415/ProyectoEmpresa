@@ -24,8 +24,8 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-        'name'=>'string|required|max:255',
-        'dni'=>'string|required|unique:clients',
+        'name'=>'required|max:255',
+        'dni'=>'required|unique:clients',
         'ruc'=>'nullable|string|unique:clients',
         'address'=>'nullable|string|max:255',
         'phone'=>'string|nullable|unique:clients',
@@ -35,12 +35,13 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'name.required'=>'Este campo es requerido.',
-            'name.string'=>'El valor no es correcto.',
+
+            // 'name.string'=>'Solo se permiten caracteres y no numeros.',
+            'name.required'=>'El nombre es requerido.',
             'name.max'=>'Solo se permiten 255 caracteres.',
 
-            'dni.string'=>'El valor no es correcto.',
-            'dni.required'=>'Este campo es requerido.',
+            // 'dni.string'=>'El valor no es correcto.',
+            'dni.required'=>'El DNI es requerido.',
             'dni.unique'=>'Este DNI ya se encuentra registrado.',
             // 'dni.min'=>'Se requiere de 8 caracteres.',
             // 'dni.max'=>'Solo se permite 8 caracteres.',
@@ -61,7 +62,7 @@ class StoreRequest extends FormRequest
             'email.string'=>'El valor no es correcto.',
             'email.unique'=>'La direccion de correo electronico ya se encuentra registrado.',
             'email.max'=>'Solo se permite 255 caracteres.',
-            'email.email'=>'No es un correo electronico.',
+            'email.email'=>'No es una direccion de correo electronico.',
         ];
     }
 }
