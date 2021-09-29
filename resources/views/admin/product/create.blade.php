@@ -40,10 +40,11 @@
 
                     <div class="form-group  @if($errors->has('sell_price')) has-danger @endif">
                         <label for="sell_price">Precio de venta</label>
-                        <input type="number" max="999999999" class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
-                        @if ($errors->has('sell_price'))
-                        <label  class="error mt-2 text-danger" for="">{{ $errors->first('sell_price') }}</label>
-                        @endif
+                        <input type="number"  class="form-control @if($errors->has('sell_price')) form-control-danger @endif" name="sell_price" id="sell_price" aria-describedby="helpId" >
+
+                        @foreach ($errors->get('sell_price') as $message)
+                        <label  class="error mt-2 text-danger" for="">{{ $message }} </label>
+                        @endforeach
                     </div>
 
                     <div class="form-group @if($errors->has('category_id')) has-danger @endif">
@@ -75,9 +76,9 @@
                     </div> --}}
                     <div class="card-body">
                         <h4 class="card-title d-flex">Imagen de producto
-                          <small class="ml-auto align-self-end">
+                        {{--   <small class="ml-auto align-self-end">
                               <a href="dropify.html" class="font-weight-light" target="_blank">Seleccionar Archivo</a>
-                            </small>
+                            </small> --}}
                         </h4>
                         <input type="file" name="picture" id="picture" class="dropify" />
                         @if ($errors->has('picture'))

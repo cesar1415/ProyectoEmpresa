@@ -59,9 +59,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($categories as $key=>$category)
                                 <tr>
-                                    <th scope="row">{{$category->id}}</th>
+                                    <th scope="row">{{$key+1}}</th>
                                     <td>
                                         <a href="{{route('categories.show',$category)}}">{{$category->name}}</a>
                                     </td>

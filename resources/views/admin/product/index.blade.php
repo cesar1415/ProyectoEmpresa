@@ -60,9 +60,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($products as  $key => $product)
                                 <tr>
-                                    <th scope="row">{{$product->id}}</th>
+                                    <th scope="row">{{$key + 1 }}</th>
                                     <td>
                                         <a href="{{route('products.show',$product)}}">{{$product->name}}</a>
                                     </td>
