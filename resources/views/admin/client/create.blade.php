@@ -30,38 +30,42 @@
                     </div>
                     {!! Form::open(['route'=>'clients.store', 'method'=>'POST','files'=>true]) !!}
 
-                    <div class="form-group">
+                    <div class="form-group @if($errors->has('name')) has-danger @endif">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" required>
+                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
+                            value="{{old('name')}}">
+                            @if ($errors->has('name'))
+                        <span class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
+                        @endif
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group @if($errors->has('name')) has-danger @endif">
                         <label for="dni">DNI</label>
-                        <input type="number" class="form-control" name="dni" id="dni" aria-describedby="helpId" required>
+                        <input type="number" class="form-control" name="dni" id="dni" aria-describedby="helpId"
+                            value="{{old('dni')}}">
+                        @if ($errors->has('dni'))
+                        <span class="error text-danger" for="input-dni">{{ $errors->first('dni') }}</span>
+                        @endif
                     </div>
 
                     <div class="form-group">
                         <label for="ruc">RUC</label>
-                        <input type="number" class="form-control" name="ruc" id="ruc" aria-describedby="helpId">
-                        <small id="helpId" class="form-text text-muted">Este campo es opcional</small>
+                        <input type="number" class="form-control" name="ruc" id="ruc" aria-describedby="helpId" value="{{old('ruc')}}">
                     </div>
 
                     <div class="form-group">
                         <label for="address">Direccion</label>
-                        <input type="text" class="form-control" name="address" id="address" aria-describedby="helpId">
-                        <small id="helpId" class="form-text text-muted">Este campo es opcional</small>
+                        <input type="text" class="form-control" name="address" id="address" aria-describedby="helpId" value="{{old('address')}}">
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Telefono \ Celular</label>
-                        <input type="number" class="form-control" name="phone" id="phone" aria-describedby="helpId">
-                        <small id="helpId" class="form-text text-muted">Este campo es opcional</small>
+                        <input type="number" class="form-control" name="phone" id="phone" aria-describedby="helpId" value="{{old('phone')}}">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Correo electronico</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId">
-                        <small id="helpId" class="form-text text-muted">Este campo es opcional</small>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" value="{{old('email')}}">
                     </div>
 
 
@@ -74,10 +78,10 @@
                 </div>
                 {{--  <div class="card-footer text-muted">
                     {{$clients->render()}}
-                </div>  --}}
-            </div>
+            </div> --}}
         </div>
     </div>
+</div>
 </div>
 @endsection
 @section('scripts')

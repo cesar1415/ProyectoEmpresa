@@ -34,7 +34,7 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'name.string'=>'El valor no es correcto.',
+            // 'name.string'=>'Solo se permiten letras.',
             'name.required'=>'El campo es requerido.',
             'name.unique'=>'El producto ya esta registrado.',
             'name.max'=>'Solo se permite 255 caracteres.',
