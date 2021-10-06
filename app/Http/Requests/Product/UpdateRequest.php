@@ -24,9 +24,9 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'string|required|unique:products,name,'.$this->route('product')->id.'|max:255',
+            'name'=>'string|required|unique:products,name,'.$this->route('product')->id.'|max:255|alpha',
 
-            'sell_price'=>'max:9|required',
+            'sell_price'=>'numeric|required|between:1,99999999',
             'category_id'=>'integer|required|exists:App\Category,id',
             'provider_id'=>'integer|required|exists:App\Provider,id',
             'picture'=> 'mimes:jpeg,bmp,png,jpg|nullable'
@@ -39,12 +39,13 @@ class UpdateRequest extends FormRequest
             'name.required'=>'El campo es requerido.',
             'name.unique'=>'El producto ya esta registrado.',
             'name.max'=>'Solo se permite 255 caracteres.',
+            'name.alpha'=>'Solo se permiten letras.',
 
 
 
+            'sell_price.numeric'=>'Solo se permiten valores numericos.',
             'sell_price.required'=>'El campo es requerido.',
-            'sell_price.max'=>'Solo se permiten 9 caracteres',
-
+            'sell_price.between'=>'Solo se permiten 9 caracteres.',
 
             'picture.mimes'=>'El formato debe ser jpg , jpeg, png o bmp.',
 
