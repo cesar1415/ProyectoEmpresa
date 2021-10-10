@@ -47,6 +47,9 @@
     <div class="my-3">
       <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"type="submit">INICIAR SESIÓN</button>
     </div>
+    <div class="my-3">
+            <a  href="{{route('register')}}" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"type="submit">REGISTRARSE</a>
+    </div>
 
     {{--  <div class="text-center mt-4 font-weight-light">
       Dont have an account? <a href="register-2.html" class="text-primary">Create</a>

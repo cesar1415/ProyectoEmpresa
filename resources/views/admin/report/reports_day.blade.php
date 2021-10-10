@@ -65,8 +65,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="table-responsive">
                         <table id="order-listing" class="table">
                             <thead>

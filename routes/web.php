@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-      return redirect('/login');
+    return redirect('/login');
 });
 
 Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.day');
