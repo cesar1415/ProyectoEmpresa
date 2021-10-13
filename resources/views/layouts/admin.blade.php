@@ -58,7 +58,7 @@
                          aria-labelledby="profileDropdown">
                         <a class="dropdown-item">
                             <i class="fas fa-cog text-primary"></i>
-                            Settings
+                            Configuracion
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="tooltip" data-placement="top"
