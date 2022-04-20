@@ -72,7 +72,7 @@
                     <hr> --}}
                 </div>
                 <div class="form-group col-md-6">
-                    <strong><i class="far fa-address-card mr-1"></i> RUC</strong>
+                    <strong><i class="far fa-address-card mr-1"></i> NIT</strong>
 
                     <p class="text-muted">{{$business->ruc}}</p>
                     <hr>
