@@ -30,50 +30,55 @@
                         </div>
                         {!! Form::open(['route' => 'providers.store', 'method' => 'POST']) !!}
 
-                        <div class="form-group @if($errors->has('name')) has-danger @endif" >
+                        <div class="form-group @if ($errors->has('name')) has-danger @endif">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control @if($errors->has('name')) form-control-danger @endif" name="name" id="name" aria-describedby="helpId">
+                            <input type="text"
+                                class="form-control @if ($errors->has('name')) form-control-danger @endif"
+                                name="name" id="name" aria-describedby="helpId">
                             @if ($errors->has('name'))
-                            <label id="firstname-error" class="error mt-2 text-danger" for="firstname">{{ $errors->first('name') }}</label>
+                                <label id="firstname-error" class="error mt-2 text-danger"
+                                    for="firstname">{{ $errors->first('name') }}</label>
                             @endif
                         </div>
 
-                        <div class="form-group @if($errors->has('email')) has-danger @endif" >
+                        <div class="form-group @if ($errors->has('email')) has-danger @endif">
                             <label for="email">Correo electronico</label>
-                            <input type="email" class="form-control  @if($errors->has('email')) form-control-danger @endif" name="email" id="email"
-                                aria-describedby="emailHelpId" placeholder="ejemplo@gmail.com">
+                            <input type="email"
+                                class="form-control  @if ($errors->has('email')) form-control-danger @endif"
+                                name="email" id="email" aria-describedby="emailHelpId" placeholder="ejemplo@gmail.com">
                             @if ($errors->has('email'))
-                            <label  class="error mt-2 text-danger" >{{ $errors->first('email') }}</label>
-
+                                <label class="error mt-2 text-danger">{{ $errors->first('email') }}</label>
                             @endif
                         </div>
 
-                        <div class="form-group @if($errors->has('ruc_number')) has-danger @endif" >
+                        <div class="form-group @if ($errors->has('ruc_number')) has-danger @endif">
                             <label for="ruc_number">Numero de RUC</label>
-                            <input type="number" class="form-control  @if($errors->has('ruc_number')) form-control-danger @endif" name="ruc_number" id="ruc_number"
-                                aria-describedby="helpId">
+                            <input type="number"
+                                class="form-control  @if ($errors->has('ruc_number')) form-control-danger @endif"
+                                name="ruc_number" id="ruc_number" aria-describedby="helpId">
                             @if ($errors->has('ruc_number'))
-                            <label  class="error mt-2 text-danger" >{{ $errors->first('ruc_number') }}</label>
-
+                                <label class="error mt-2 text-danger">{{ $errors->first('ruc_number') }}</label>
                             @endif
 
                         </div>
 
-                        <div class="form-group @if($errors->has('address')) has-danger @endif" >
+                        <div class="form-group @if ($errors->has('address')) has-danger @endif">
                             <label for="address">Dirección</label>
-                            <input type="text" class="form-control  @if($errors->has('address')) form-control-danger @endif" name="address" id="address" aria-describedby="helpId">
+                            <input type="text"
+                                class="form-control  @if ($errors->has('address')) form-control-danger @endif"
+                                name="address" id="address" aria-describedby="helpId">
                             @if ($errors->has('address'))
-                            <label  class="error mt-2 text-danger" >{{ $errors->first('address') }}</label>
-
+                                <label class="error mt-2 text-danger">{{ $errors->first('address') }}</label>
                             @endif
                         </div>
 
-                        <div class="form-group @if($errors->has('phone')) has-danger @endif" >
+                        <div class="form-group @if ($errors->has('phone')) has-danger @endif">
                             <label for="phone">Numero de contacto</label>
-                            <input type="number" class="form-control  @if($errors->has('phone')) form-control-danger @endif" name="phone" id="phone" aria-describedby="helpId">
+                            <input type="number"
+                                class="form-control  @if ($errors->has('phone')) form-control-danger @endif"
+                                name="phone" id="phone" aria-describedby="helpId">
                             @if ($errors->has('phone'))
-                            <label  class="error mt-2 text-danger" >{{ $errors->first('phone') }}</label>
-
+                                <label class="error mt-2 text-danger">{{ $errors->first('phone') }}</label>
                             @endif
                         </div>
 
@@ -92,5 +97,5 @@
     </div>
 @endsection
 @section('scripts')
-    {!! Html::script('melody/js/data-table.js') !!}
+    {!! Html::script('js/data-table.js') !!}
 @endsection

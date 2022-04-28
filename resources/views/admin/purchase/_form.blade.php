@@ -4,7 +4,7 @@
             <label for="provider_id">Proveedor</label>
             <select class="form-control" name="provider_id" id="provider_id">
                 @foreach ($providers as $provider)
-                <option value="{{$provider->id}}">{{$provider->name}}</option>
+                    <option value="{{ $provider->id }}">{{ $provider->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -22,20 +22,17 @@
     </div>
 </div>
 
-{{-- <div class="form-group">
-    <label for="code">Código de barras</label>
-    <input type="text" name="code" id="code" class="form-control" placeholder="" aria-describedby="helpId">
-</div> --}}
+
 
 <div class="form-row">
     <div class="form-group col-md-6">
         <div class="form-group">
             <label for="product_id">Producto</label>
-            {{--  <select class="form-control selectpicker" data-live-search="true" name="product_id" id="product_id">  --}}
+
             <select class="form-control" name="product_id" id="product_id">
                 <option value="" disabled selected>Selecccione un producto</option>
                 @foreach ($products as $product)
-                <option value="{{$product->id}}">{{$product->name}}</option>
+                    <option value="{{ $product->id }}">{{ $product->name }}</option>
                 @endforeach
             </select>
         </div>

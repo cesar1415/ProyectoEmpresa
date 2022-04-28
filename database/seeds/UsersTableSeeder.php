@@ -30,7 +30,16 @@ class UsersTableSeeder extends Seeder
             'password'=>  bcrypt(12345),
         ]);
 
+         $user3 = User::create([
+            'name'=>'stiven',
+            'email'=>'stevenpc82@gmail.com',
+            'password'=>  bcrypt(12345),
+        ]);
+
+
+
         $user->roles()->sync(1);
         $user2->roles()->sync(1);
+        $user3->roles()->sync(1);
     }
 }
