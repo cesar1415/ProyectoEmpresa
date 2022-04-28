@@ -22,12 +22,14 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Auth::routes();
+
 Route::get('/forgot_password', 'Auth\ForgotPasswordController@index')->name('forgot.password.get');
 Route::post('/forgot_password', 'Auth\ForgotPasswordController@sendEmail')->name('forgot.password.post');
 
 
-Route::get('/reset_password', 'Auth\ResetPasswordController@index')->name('forgot.password.get');
-Route::post('/reset_password', 'Auth\ResetPasswordController@sendEmail')->name('forgot.password.post');
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@index')->name('password.reset');
+Route::post('/password/reset', 'Auth\ResetPasswordController@updated')->name('password.update');
 
 /**********/
 
@@ -119,6 +121,6 @@ Route::resource('roles', 'RoleController')->names('roles');
 
 /**************/
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');

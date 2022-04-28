@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\forgotPassword;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use App\User;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 
@@ -33,7 +35,7 @@ class ForgotPasswordController extends Controller
 
     public function index()
     {
-        return view('security.forgot_password');
+        return view('auth.passwords.email');
     }
 
 
@@ -53,10 +55,20 @@ class ForgotPasswordController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        Mail::send('email.forgot', ['token' => $token], function ($message) use ($request) {
-            $message->sender($request->email);
-            $message->subject('Recuperar clave');
-        });
+        $user = User::where('email', $request->email)->first();
+
+        $to_email = $request->email;
+
+        Mail::to($to_email)->send(new forgotPassword($token, $user));
+
+
+        if (count(Mail::failures()) > 0) {
+            Log::info("Error");
+        }
+
+        Log::info("email enviado");
+
+
 
 
         return redirect()->back()

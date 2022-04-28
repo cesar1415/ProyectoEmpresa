@@ -36,6 +36,7 @@ class ResetPasswordController extends Controller
     public function updated(Request $request)
     {
 
+
         $request->validate([
             'email' => 'required|bail|email|exists:users',
             'password' => 'required|bail|min:6|confirmed',

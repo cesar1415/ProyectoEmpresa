@@ -69,11 +69,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-12 offset-md-4">
+                            <div class="form-group row justify-content-md-between  align-items-center mb-0">
+                                <div class="col-12 col-md-6">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Registrar') }}
                                     </button>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <a href="{{ route('login') }}" class="auth-link text-black" type="submit">Ya tengo
+                                        una cuenta</a>
                                 </div>
                             </div>
                         </form>
