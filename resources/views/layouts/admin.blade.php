@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('title')</title>
     <!-- plugins:css -->
-    {!! Html::style('melody/vendors/iconfonts/font-awesome/css/all.min.css') !!}
-    {!! Html::style('melody/vendors/css/vendor.bundle.base.css') !!}
-    {!! Html::style('melody/vendors/css/vendor.bundle.addons.css') !!}
+    {!! Html::style('vendors/iconfonts/font-awesome/css/all.min.css') !!}
+    {!! Html::style('vendors/css/vendor.bundle.base.css') !!}
+    {!! Html::style('vendors/css/vendor.bundle.addons.css') !!}
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    {!! Html::style('melody/css/style.css') !!}
+    {!! Html::style('css/style.css') !!}
     @yield('styles')
     <!-- endinject -->
 
@@ -26,9 +26,9 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo" href="{{ route('home') }}"><img
-                        src="{{ asset('melody/images/logo.svg') }}" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="index-2.html"><img
-                        src="{{ asset('melody/images/logo.svg') }}" alt="logo" /></a>
+                        src="{{ asset('images/logo.svg') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index-2.html"><img src="{{ asset('images/logo.svg') }}"
+                        alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -53,7 +53,7 @@
                     <li class="nav-item nav-profile dropdown">
 
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="{{ asset('melody/images/faces/face16.jpg') }}" alt="profile" />
+                            <img src="{{ asset('images/faces/face16.jpg') }}" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
@@ -84,30 +84,7 @@
         </nav>
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_settings-panel.html -->
-            {{-- <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
-        <div id="theme-settings" class="settings-panel">
-            <i class="settings-close fa fa-times"></i>
-            <p class="settings-heading">SIDEBAR SKINS</p>
-            <div class="sidebar-bg-options selected" id="sidebar-light-theme">
-                <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
-            </div>
-            <div class="sidebar-bg-options" id="sidebar-dark-theme">
-                <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
-            </div>
-            <p class="settings-heading mt-2">HEADER SKINS</p>
-            <div class="color-tiles mx-0 px-4">
-                <div class="tiles primary"></div>
-                <div class="tiles success"></div>
-                <div class="tiles warning"></div>
-                <div class="tiles danger"></div>
-                <div class="tiles info"></div>
-                <div class="tiles dark"></div>
-                <div class="tiles default"></div>
-            </div>
-        </div>
-    </div> --}}
+
 
 
             @yield('preference')
@@ -150,23 +127,23 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
-    {!! Html::script('melody/vendors/js/vendor.bundle.base.js') !!}
-    {!! Html::script('melody/vendors/js/vendor.bundle.addons.js') !!}
+    {!! Html::script('vendors/js/vendor.bundle.base.js') !!}
+    {!! Html::script('vendors/js/vendor.bundle.addons.js') !!}
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <!-- End plugin js for this page-->
     <!-- inject:js -->
-    {!! Html::script('melody/js/off-canvas.js') !!}
-    {!! Html::script('melody/js/hoverable-collapse.js') !!}
-    {!! Html::script('melody/js/misc.js') !!}
-    {!! Html::script('melody/js/settings.js') !!}
-    {!! Html::script('melody/js/todolist.js') !!}
+    {!! Html::script('js/off-canvas.js') !!}
+    {!! Html::script('js/hoverable-collapse.js') !!}
+    {!! Html::script('js/misc.js') !!}
+    {!! Html::script('js/settings.js') !!}
+    {!! Html::script('js/todolist.js') !!}
 
 
 
     <!-- endinject -->
     <!-- Custom js for this page-->
-    {!! Html::script('melody/js/dashboard.js') !!}
+    {!! Html::script('js/dashboard.js') !!}
     <!-- End custom js for this page-->
     @yield('scripts')
 

@@ -113,7 +113,8 @@
 
                                                                             <ul style="list-style: none;padding:0;">
                                                                                 <li>
-                                                                                    Chat página web <a href="#"
+                                                                                    Página web <a
+                                                                                        href="http://proyectoenterprise.herokuapp.com/"
                                                                                         rel="noopener noreferrer"
                                                                                         style="color: #2A2831;font-family: Asap, Open Sans;font-size: 16px; font-weight: 600; display: inline;font-family: 'Roboto', sans-serif;">www.nicejeans.co</a>
                                                                                     <br> Horario de atención lunes a
@@ -146,7 +147,8 @@
                                                                         <p
                                                                             style="color: #2A2831;font-family: Asap, Open Sans;font-size: 16px; font-weight: 700;font-family: 'Roboto', sans-serif;">
                                                                             Síguenos en</p>
-                                                                        <a class="socialFacebook" href="#"
+                                                                        <a class="socialFacebook"
+                                                                            href="https://www.facebook.com/sandracifu27"
                                                                             target="_blank">
                                                                             <img src="https://d1gxbqkybgjpxv.cloudfront.net/uploads/fe4c1ec9-00cc-467a-9ab6-7a6c88283ad9/original/Facebook.png"
                                                                                 style="width: 32px; height: 32px; border: none; line-height: 100%; display: inline; padding: 0px 12px; text-decoration: none;">
@@ -157,7 +159,8 @@
                                                                                 style="width: 32px; height: 32px; border: none; line-height: 100%; display: inline; padding: 0px 12px; text-decoration: none;">
                                                                         </a>
                                                                         <br>
-                                                                        <a class="Logo" href="/"
+                                                                        <a class="Logo"
+                                                                            href="http://proyectoenterprise.herokuapp.com/"
                                                                             target="_blank">LOGO DE SERVIDOR EN
                                                                             PNG
                                                                             <img src=""

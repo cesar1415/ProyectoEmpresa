@@ -2,25 +2,22 @@
     <label for="client_id">Cliente</label>
     <select class="form-control" name="client_id" id="client_id">
         @foreach ($clients as $client)
-        <option value="{{$client->id}}">{{$client->name}}</option>
+            <option value="{{ $client->id }}">{{ $client->name }}</option>
         @endforeach
     </select>
 </div>
 
-{{-- <div class="form-group">
-  <label for="code">Código de barras</label>
-  <input type="text" name="code" id="code" class="form-control" placeholder="" aria-describedby="helpId">
-</div> --}}
 
-  <div class="form-row">
+<div class="form-row">
     <div class="form-group col-md-4">
         <div class="form-group">
             <label for="product_id">Producto</label>
-            {{--  <select class="form-control selectpicker" data-live-search="true" name="product_id" id="product_id">  --}}
+
             <select class="form-control" name="product_id" id="product_id">
                 <option value="" disabled selected>Selecccione un producto</option>
                 @foreach ($products as $product)
-                <option value="{{$product->id}}_{{$product->stock}}_{{$product->sell_price}}">{{$product->name}}</option>
+                    <option value="{{ $product->id }}_{{ $product->stock }}_{{ $product->sell_price }}">
+                        {{ $product->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -29,7 +26,7 @@
         <div class="form-group">
             <label for="">Stock actual</label>
             <input type="text" name="" id="stock" value="" class="form-control" disabled>
-          </div>
+        </div>
     </div>
     <div class="form-group col-md-4">
         <div class="form-group">
@@ -37,9 +34,9 @@
             <input type="number" class="form-control" name="price" id="price" aria-describedby="helpId" disabled>
         </div>
     </div>
-  </div>
+</div>
 
-  <div class="form-row">
+<div class="form-row">
     <div class="form-group col-md-6">
         <div class="form-group">
             <label for="quantity">Cantidad</label>
@@ -61,10 +58,11 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon2">%</span>
             </div>
-            <input type="number" class="form-control" name="discount" id="discount" aria-describedby="basic-addon2" value="0">
+            <input type="number" class="form-control" name="discount" id="discount" aria-describedby="basic-addon2"
+                value="0">
         </div>
     </div>
-  </div>
+</div>
 
 <div class="form-group">
     <button type="button" id="agregar" class="btn btn-primary float-right">Agregar producto</button>

@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Sistema Punto De Venta</title>
     <!-- plugins:css -->
-    {!! Html::style('melody/vendors/iconfonts/font-awesome/css/all.min.css') !!}
-    {!! Html::style('melody/vendors/css/vendor.bundle.base.css') !!}
-    {!! Html::style('melody/vendors/css/vendor.bundle.addons.css') !!}
+    {!! Html::style('vendors/iconfonts/font-awesome/css/all.min.css') !!}
+    {!! Html::style('vendors/css/vendor.bundle.base.css') !!}
+    {!! Html::style('vendors/css/vendor.bundle.addons.css') !!}
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    {!! Html::style('melody/css/style.css') !!}
+    {!! Html::style('css/style.css') !!}
     <!-- endinject -->
-    <link rel="shortcut icon" href="melody/images/favicon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
                             {{-- <div class="brand-logo"> --}}
-                            {{-- <img src="{{asset('melody/images/logo.svg')}}" alt="logo"> --}}
+                            {{-- <img src="{{asset('images/logo.svg')}}" alt="logo"> --}}
                             {{-- </div>------Codigo editado por Stiven --}}
                             <h4 class="text text-lg-center">S.O.D</h4>
                             <h6 class="font-weight-light text-lg-center">Bienvenido al centro de control de Nice Jeans,
@@ -65,15 +65,15 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    {!! Html::script('melody/vendors/js/vendor.bundle.base.js') !!}
-    {!! Html::script('melody/vendors/js/vendor.bundle.addons.js') !!}
+    {!! Html::script('vendors/js/vendor.bundle.base.js') !!}
+    {!! Html::script('vendors/js/vendor.bundle.addons.js') !!}
     <!-- endinject -->
     <!-- inject:js -->
-    {!! Html::script('melody/js/off-canvas.js') !!}
-    {!! Html::script('melody/js/hoverable-collapse.js') !!}
-    {!! Html::script('melody/js/misc.js') !!}
-    {!! Html::script('melody/js/settings.js') !!}
-    {!! Html::script('melody/js/todolist.js') !!}
+    {!! Html::script('js/off-canvas.js') !!}
+    {!! Html::script('js/hoverable-collapse.js') !!}
+    {!! Html::script('js/misc.js') !!}
+    {!! Html::script('js/settings.js') !!}
+    {!! Html::script('js/todolist.js') !!}
     <!-- endinject -->
 </body>
 
