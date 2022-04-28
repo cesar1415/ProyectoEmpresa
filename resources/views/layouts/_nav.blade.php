@@ -107,9 +107,15 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">
-                <i class="fab fa-youtube menu-icon"></i>
-                <span class="menu-title">YouTube</span>
+            <a class="nav-link" href="https://www.facebook.com/sandracifu27">
+                <i class="fab fa-facebook menu-icon"></i>
+                <span class="menu-title">Facebook</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/nicejeans_colombia/?hl=es">
+                <i class="fab fa-instagram menu-icon"></i>
+                <span class="menu-title">Instagram</span>
             </a>
         </li>
     </ul>
