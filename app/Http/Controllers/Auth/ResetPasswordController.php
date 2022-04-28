@@ -29,7 +29,7 @@ class ResetPasswordController extends Controller
 
     public function index($token)
     {
-        return view('security.reset_password', compact('token'));
+        return view('auth.passwords.reset', compact('token'));
     }
 
 
@@ -52,6 +52,8 @@ class ResetPasswordController extends Controller
         if (!$updatePassword) {
             return back()->withInput()->with('error', 'token invalido');
         }
+
+
 
         $user = User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
 
