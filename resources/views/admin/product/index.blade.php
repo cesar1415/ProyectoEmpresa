@@ -28,7 +28,7 @@
 
 
 
-                            <a href="{{ route('products.create') }}" class="btn btn-secondary"> Agregar</a>
+                            <a href="{{ route('products.create') }}" class="btn btn-success text-light"> Agregar</a>
 
 
                         </div>
@@ -56,18 +56,18 @@
                                             <td>{{ $product->stock }}</td>
                                             @if ($product->status == 'ACTIVE')
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-success"
+                                                    <a class="jsgrid-button btn btn-success d-inline-flex aling-items-center p-2"
                                                         href="{{ route('change.status.products', $product) }}"
                                                         title="Editar">
-                                                        Activo<i class="fas fa-check"></i>
+                                                        activo<i class="ml-2 small fas fa-check"></i>
                                                     </a>
                                                 </td>
                                             @else
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-danger"
+                                                    <a class="jsgrid-button btn btn-danger d-inline-flex aling-items-center p-2"
                                                         href="{{ route('change.status.products', $product) }}"
                                                         title="Editar">
-                                                        Desactivado<i class="fas fa-times"></i>
+                                                        desactivado<i class="ml-2 small fas fa-times"></i>
                                                     </a>
                                                 </td>
                                             @endif
@@ -76,7 +76,7 @@
                                             <td style="width: 50px;">
                                                 {!! Form::open(['route' => ['products.destroy', $product], 'method' => 'DELETE']) !!}
 
-                                                <a class="jsgrid-button jsgrid-edit-button"
+                                                <a class="jsgrid-button jsgrid-edit-button unstyled-button"
                                                     href="{{ route('products.edit', $product) }}" title="Editar">
                                                     <i class="far fa-edit"></i>
                                                 </a>

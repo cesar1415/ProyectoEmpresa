@@ -26,7 +26,7 @@
                             <h4 class="card-title">Clientes</h4>
 
 
-                            <a href="{{ route('clients.create') }}" class="btn btn-secondary">Agregar</a>
+                            <a href="{{ route('clients.create') }}" class="btn btn-success text-light">Agregar</a>
 
                         </div>
 
@@ -55,7 +55,7 @@
                                             <td style="width: 50px;">
                                                 {!! Form::open(['route' => ['clients.destroy', $client], 'method' => 'DELETE']) !!}
 
-                                                <a class="jsgrid-button jsgrid-edit-button"
+                                                <a class="jsgrid-button jsgrid-edit-button unstyled-button"
                                                     href="{{ route('clients.edit', $client) }}" title="Editar">
                                                     <i class="far fa-edit"></i>
                                                 </a>

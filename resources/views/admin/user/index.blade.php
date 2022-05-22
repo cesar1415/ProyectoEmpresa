@@ -27,7 +27,7 @@
                             <h4 class="card-title">Usuarios del sistema</h4>
 
 
-                            <a href="{{ route('users.create') }}" class="btn btn-secondary"> Agregar</a>
+                            <a href="{{ route('users.create') }}" class="btn btn-success text-light"> Agregar</a>
 
 
                         </div>
@@ -53,7 +53,7 @@
                                             <td style="width: 50px;">
                                                 {!! Form::open(['route' => ['users.destroy', $user], 'method' => 'DELETE']) !!}
 
-                                                <a class="jsgrid-button jsgrid-edit-button"
+                                                <a class="jsgrid-button jsgrid-edit-button unstyled-button"
                                                     href="{{ route('users.edit', $user) }}" title="Editar">
                                                     <i class="far fa-edit"></i>
                                                 </a>

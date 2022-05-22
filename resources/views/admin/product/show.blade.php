@@ -41,11 +41,6 @@
                                     <div class="d-flex justify-content-between">
                                     </div>
                                 </div>
-
-
-
-
-
                                 <div class="py-4">
                                     <p class="clearfix">
                                         <span class="float-left">
@@ -82,10 +77,10 @@
 
                                 @if ($product->status == 'ACTIVE')
                                     <a href="{{ route('change.status.products', $product) }}"
-                                        class="btn btn-success btn-block">Activo</a>
+                                        class="btn btn-success btn-block">activo</a>
                                 @else
                                     <a href="{{ route('change.status.products', $product) }}"
-                                        class="btn btn-danger btn-block">Desactivado</a>
+                                        class="btn btn-danger btn-block">desactivado</a>
                                 @endif
 
                             </div>
@@ -101,7 +96,7 @@
 
 
                                         <div class="form-group col-md-6">
-                                            <strong><i class="fab fa-product-hunt mr-1"></i>Codigo</strong>
+                                            <strong><i class="fab fa-product-hunt mr-1"></i>Código</strong>
                                             <p class="text-muted">
                                                 {{ $product->code }}
                                             </p>

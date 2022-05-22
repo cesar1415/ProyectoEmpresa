@@ -25,9 +25,9 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Ventas</h4>
-                            <button class="btn btn-secondary">
-                                <a href="{{ route('sales.create') }}"> Registrar</a>
-                            </button>
+
+                            <a href="{{ route('sales.create') }}" class="btn btn-success text-light"> Registrar</a>
+
                         </div>
 
                         <div class="table-responsive">
@@ -52,16 +52,16 @@
 
                                             @if ($sale->status == 'VALID')
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-success"
+                                                    <a class="jsgrid-button btn btn-success d-inline-flex aling-items-center p-2"
                                                         href="{{ route('change.status.sales', $sale) }}" title="Editar">
-                                                        Activo<i class="fas fa-check"></i>
+                                                        activo<i class="ml-2 fas fa-check"></i>
                                                     </a>
                                                 </td>
                                             @else
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-danger"
+                                                    <a class="jsgrid-button btn btn-danger d-inline-flex aling-items-center p-2"
                                                         href="{{ route('change.status.sales', $sale) }}" title="Editar">
-                                                        Cancelado<i class="fas fa-times"></i>
+                                                        cancelado<i class="ml-2 small fas fa-times"></i>
                                                     </a>
                                                 </td>
                                             @endif
@@ -71,13 +71,13 @@
 
 
                                                 <a href="{{ route('sales.pdf', $sale) }}"
-                                                    class="jsgrid-button jsgrid-edit-button"><i
+                                                    class="jsgrid-button jsgrid-edit-button unstyled-button"><i
                                                         class="far fa-file-pdf"></i></a>
                                                 <a href="{{ route('sales.print', $sale) }}"
-                                                    class="jsgrid-button jsgrid-edit-button"><i
+                                                    class="jsgrid-button jsgrid-edit-button unstyled-button"><i
                                                         class="fas fa-print"></i></a>
                                                 <a href="{{ route('sales.show', $sale) }}"
-                                                    class="jsgrid-button jsgrid-edit-button"><i
+                                                    class="jsgrid-button jsgrid-edit-button unstyled-button"><i
                                                         class="far fa-eye"></i></a>
 
                                             </td>

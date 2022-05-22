@@ -27,7 +27,7 @@
                             <h4 class="card-title">Compras</h4>
 
 
-                            <a href="{{ route('purchases.create') }}" class="btn btn-secondary"> Registrar</a>
+                            <a href="{{ route('purchases.create') }}" class="btn btn-success text-light">Registrar</a>
 
 
                         </div>
@@ -55,18 +55,18 @@
 
                                             @if ($purchase->status == 'VALID')
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-success"
+                                                    <a class="jsgrid-button btn btn-success d-inline-flex aling-items-center p-2"
                                                         href="{{ route('change.status.purchases', $purchase) }}"
                                                         title="Editar">
-                                                        Activo<i class="fas fa-check"></i>
+                                                        activo<i class="ml-2 small fas fa-check"></i>
                                                     </a>
                                                 </td>
                                             @else
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-danger"
+                                                    <a class="jsgrid-button btn btn-danger d-inline-flex aling-items-center p-2"
                                                         href="{{ route('change.status.purchases', $purchase) }}"
                                                         title="Editar">
-                                                        Cancelado<i class="fas fa-times"></i>
+                                                        cancelado<i class="ml-2 small fas fa-times"></i>
                                                     </a>
                                                 </td>
                                             @endif
@@ -77,11 +77,11 @@
 
 
                                                 <a href="{{ route('purchases.pdf', $purchase) }}"
-                                                    class="jsgrid-button jsgrid-edit-button"><i
+                                                    class="jsgrid-button jsgrid-edit-button unstyled-button"><i
                                                         class="far fa-file-pdf"></i></a>
 
                                                 <a href="{{ route('purchases.show', $purchase) }}"
-                                                    class="jsgrid-button jsgrid-edit-button"><i
+                                                    class="jsgrid-button jsgrid-edit-button unstyled-button"><i
                                                         class="far fa-eye"></i></a>
 
                                                 <button class="jsgrid-button jsgrid-delete-button unstyled-button"
