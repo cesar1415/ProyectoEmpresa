@@ -136,7 +136,7 @@
                                                                             <a class="jsgrid-button btn btn-success"
                                                                                 href="{{ route('change.status.purchases', $purchase) }}"
                                                                                 title="Editar">
-                                                                                Activo <i class="fas fa-check"></i>
+                                                                                activo <i class="ml-2 fas fa-check"></i>
                                                                             </a>
                                                                         </td>
                                                                     @else
@@ -144,7 +144,7 @@
                                                                             <a class="jsgrid-button btn btn-danger"
                                                                                 href="{{ route('change.status.purchases', $purchase) }}"
                                                                                 title="Editar">
-                                                                                Cancelado <i class="fas fa-times"></i>
+                                                                                cancelado <i class="ml-2 fas fa-times"></i>
                                                                             </a>
                                                                         </td>
                                                                     @endif
@@ -153,7 +153,7 @@
                                                                         <a href="{{ route('purchases.pdf', $purchase) }}"
                                                                             class="jsgrid-button jsgrid-edit-button"><i
                                                                                 class="far fa-file-pdf"></i></a>
-                                                                        {{-- <a href="#" class="jsgrid-button jsgrid-edit-button"><i class="fas fa-print"></i></a> --}}
+
                                                                         <a href="{{ route('purchases.show', $purchase) }}"
                                                                             class="jsgrid-button jsgrid-edit-button"><i
                                                                                 class="far fa-eye"></i></a>
@@ -215,7 +215,7 @@
                                                                             <a class="jsgrid-button btn btn-success"
                                                                                 href="{{ route('change.status.sales', $sale) }}"
                                                                                 title="Editar">
-                                                                                Activo <i class="fas fa-check"></i>
+                                                                                Activo <i class="ml-2 fas fa-check"></i>
                                                                             </a>
                                                                         </td>
                                                                     @else
@@ -223,7 +223,7 @@
                                                                             <a class="jsgrid-button btn btn-danger"
                                                                                 href="{{ route('change.status.sales', $sale) }}"
                                                                                 title="Editar">
-                                                                                Cancelado <i class="fas fa-times"></i>
+                                                                                Cancelado <i class="ml-2 fas fa-times"></i>
                                                                             </a>
                                                                         </td>
                                                                     @endif

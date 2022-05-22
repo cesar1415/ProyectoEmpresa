@@ -25,11 +25,7 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Roles del sistema</h4>
-
-
-                            <a href="{{ route('roles.create') }}" class="btn btn-secondary"> Agregar</a>
-
-
+                            <a href="{{ route('roles.create') }}" class="btn btn-success text-light"> Agregar</a>
                         </div>
 
                         <div class="table-responsive">
@@ -53,7 +49,7 @@
                                             <td style="width: 50px;">
                                                 {!! Form::open(['route' => ['roles.destroy', $role], 'method' => 'DELETE']) !!}
 
-                                                <a class="jsgrid-button jsgrid-edit-button"
+                                                <a class="jsgrid-button jsgrid-edit-button  unstyled-button"
                                                     href="{{ route('roles.edit', $role) }}" title="Editar">
                                                     <i class="far fa-edit"></i>
                                                 </a>

@@ -150,7 +150,7 @@
                                                                             <a class="jsgrid-button btn btn-success"
                                                                                 href="{{ route('change.status.sales', $sale) }}"
                                                                                 title="Editar">
-                                                                                Activo <i class="fas fa-check"></i>
+                                                                                Activo <i class="ml-2 fas fa-check"></i>
                                                                             </a>
                                                                         </td>
                                                                     @else
@@ -158,7 +158,7 @@
                                                                             <a class="jsgrid-button btn btn-danger"
                                                                                 href="{{ route('change.status.sales', $sale) }}"
                                                                                 title="Editar">
-                                                                                Cancelado <i class="fas fa-times"></i>
+                                                                                Cancelado <i class="ml-2 fas fa-times"></i>
                                                                             </a>
                                                                         </td>
                                                                     @endif

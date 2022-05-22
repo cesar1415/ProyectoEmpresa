@@ -50,7 +50,7 @@
         </div>
         <div class="my-3">
             <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Iniciar
-                Sesión</button>
+                sesión</button>
         </div>
         <div class="my-3">
             <a href="{{ route('register') }}" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"

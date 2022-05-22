@@ -25,7 +25,7 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Proveedores</h4>
-                            <a href="{{ route('providers.create') }}" class="btn btn-secondary">Agregar</a>
+                            <a href="{{ route('providers.create') }}" class="btn btn-success text-light">Agregar</a>
                         </div>
 
                         <div class="table-responsive">

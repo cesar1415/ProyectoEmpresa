@@ -26,7 +26,7 @@
                         <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Categorías</h4>
 
-                            <a href="{{ route('categories.create') }}" class="btn btn-secondary">Agregar</a>
+                            <a href="{{ route('categories.create') }}" class="btn btn-success text-light">Agregar</a>
 
                         </div>
 
@@ -52,7 +52,7 @@
                                             <td style="width: 50px;">
                                                 {!! Form::open(['route' => ['categories.destroy', $category], 'method' => 'DELETE']) !!}
 
-                                                <a class="jsgrid-button jsgrid-edit-button"
+                                                <a class="jsgrid-button jsgrid-edit-button unstyled-button"
                                                     href="{{ route('categories.edit', $category) }}" title="Editar">
                                                     <i class="far fa-edit"></i>
                                                 </a>

@@ -72,10 +72,10 @@
                                             <td>{{ $product->stock }}</td>
                                             @if ($product->status == 'ACTIVE')
                                                 <td>
-                                                    <a class="jsgrid-button btn btn-success"
+                                                    <a class="jsgrid-button btn btn-success "
                                                         href="{{ route('change.status.products', $product) }}"
                                                         title="Editar">
-                                                        Activo <i class="fas fa-check"></i>
+                                                        Activo <i class="ml-2  fas fa-check"></i>
                                                     </a>
                                                 </td>
                                             @else
@@ -83,7 +83,7 @@
                                                     <a class="jsgrid-button btn btn-danger"
                                                         href="{{ route('change.status.products', $product) }}"
                                                         title="Editar">
-                                                        Desactivado <i class="fas fa-times"></i>
+                                                        Desactivado <i class=" ml-2 fas fa-times"></i>
                                                     </a>
                                                 </td>
                                             @endif
