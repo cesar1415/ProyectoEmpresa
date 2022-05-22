@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="form-group @if ($errors->has('category_id')) has-danger @endif">
-                            <label for="category_id">Categoria</label>
+                            <label for="category_id">Categoría</label>
                             <select class="form-control @if ($errors->has('category_id')) form-control-danger @endif"
                                 name="category_id" id="category_id">
                                 @foreach ($categories as $category)

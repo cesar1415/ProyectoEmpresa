@@ -13,9 +13,9 @@ class UserController extends Controller
     {
         $this->middleware('auth');
 
-        $this->middleware('can:users.create')->only(['create','store']);
+        $this->middleware('can:users.create')->only(['create', 'store']);
         $this->middleware('can:users.index')->only(['index']);
-        $this->middleware('can:users.edit')->only(['edit','update']);
+        $this->middleware('can:users.edit')->only(['edit', 'update']);
         $this->middleware('can:users.show')->only(['show']);
         $this->middleware('can:users.destroy')->only(['destroy']);
     }
@@ -32,7 +32,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->all());
-        $user->update(['password'=> Hash::make($request->password)]);
+        $user->update(['password' => Hash::make($request->password)]);
         $user->roles()->sync($request->get('roles'));
         return redirect()->route('users.index');
     }
@@ -40,22 +40,29 @@ class UserController extends Controller
     {
         $total_purchases = 0;
         foreach ($user->sales as $key =>  $sale) {
-            $total_purchases+=$sale->total;
+            $total_purchases += $sale->total;
         }
         $total_amount_sold = 0;
         foreach ($user->purchases as $key =>  $purchase) {
-            $total_amount_sold+=$purchase->total;
+            $total_amount_sold += $purchase->total;
         }
         return view('admin.user.show', compact('user', 'total_purchases', 'total_amount_sold'));
     }
     public function edit(User $user)
     {
         $roles = Role::get();
-        return view('admin.user.edit', compact('user','roles'));
+        return view('admin.user.edit', compact('user', 'roles'));
     }
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
+        if ($request->password) {
+            $user->update($request->all());
+        } else {
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
+        }
         $user->roles()->sync($request->get('roles'));
         return redirect()->route('users.index');
     }

@@ -1,15 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Información sobre el usuario')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-@endsection
 @section('create')
 
 @endsection
@@ -176,7 +167,8 @@
                                                             <tr>
                                                                 <td colspan="2"><strong>Monto total comprado: </strong></td>
                                                                 <td colspan="3" align="left">
-                                                                    <strong>s/{{ $total_amount_sold }}</strong></td>
+                                                                    <strong>s/{{ $total_amount_sold }}</strong>
+                                                                </td>
                                                             </tr>
                                                         </tfoot>
                                                     </table>
@@ -257,7 +249,8 @@
                                                             <tr>
                                                                 <td colspan="2"><strong>Monto total vendido: </strong></td>
                                                                 <td colspan="3" align="left">
-                                                                    <strong>s/{{ $total_purchases }}</strong></td>
+                                                                    <strong>s/{{ $total_purchases }}</strong>
+                                                                </td>
                                                             </tr>
                                                         </tfoot>
                                                     </table>

@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de ventas')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -33,18 +23,11 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Ventas</h4>
-                            {{-- <i class="fas fa-ellipsis-v"></i> --}}
-                            <div class="btn-group">
-                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{{ route('sales.create') }}" class="dropdown-item">Registrar</a>
-
-                                </div>
-                            </div>
+                            <button class="btn btn-secondary">
+                                <a href="{{ route('sales.create') }}"> Registrar</a>
+                            </button>
                         </div>
 
                         <div class="table-responsive">

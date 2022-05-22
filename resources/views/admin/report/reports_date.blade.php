@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Reporte por rango de fecha')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -32,8 +22,6 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-
-
 
                         {!! Form::open(['route' => 'report.results', 'method' => 'POST']) !!}
 
@@ -122,14 +110,14 @@
     {!! Html::script('js/data-table.js') !!}
     <script>
         window.onload = function() {
-            var fecha = new Date(); //Fecha actual
-            var mes = fecha.getMonth() + 1; //obteniendo mes
-            var dia = fecha.getDate(); //obteniendo dia
-            var ano = fecha.getFullYear(); //obteniendo año
+            var fecha = new Date();
+            var mes = fecha.getMonth() + 1;
+            var dia = fecha.getDate();
+            var ano = fecha.getFullYear();
             if (dia < 10)
-                dia = '0' + dia; //agrega cero si el menor de 10
+                dia = '0' + dia;
             if (mes < 10)
-                mes = '0' + mes //agrega cero si el menor de 10
+                mes = '0' + mes
             document.getElementById('fecha_fin').value = ano + "-" + mes + "-" + dia;
         }
     </script>

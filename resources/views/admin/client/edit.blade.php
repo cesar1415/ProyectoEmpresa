@@ -10,13 +10,13 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Edicion de cliente
+                Edición de cliente
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('clients.index') }}">Clientes</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Edicion de cliente</li>
+                    <li class="breadcrumb-item active" aria-current="page">Edición de cliente</li>
                 </ol>
             </nav>
         </div>
@@ -26,7 +26,7 @@
                     <div class="card-body">
 
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title">Edicion de cliente</h4>
+                            <h4 class="card-title">Edición de cliente</h4>
                         </div>
 
                         {!! Form::model($client, ['route' => ['clients.update', $client], 'method' => 'PUT', 'files' => true]) !!}
@@ -58,14 +58,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Telefono \ Celular</label>
+                            <label for="phone">Telefono / Celular</label>
                             <input type="number" class="form-control" name="phone" id="phone"
                                 value="{{ $client->phone }}" aria-describedby="helpId">
                             <small id="helpId" class="form-text text-muted">Este campo es opcional</small>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Correo electronico</label>
+                            <label for="email">Correo electrónico</label>
                             <input type="email" class="form-control" name="email" id="email"
                                 value="{{ $client->email }}" aria-describedby="helpId">
                             <small id="helpId" class="form-text text-muted">Este campo es opcional</small>

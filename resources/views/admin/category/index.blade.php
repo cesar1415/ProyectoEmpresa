@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de categorías')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -35,18 +25,9 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Categorías</h4>
-                            {{-- <i class="fas fa-ellipsis-v"></i> --}}
-                            <a href="{{ route('categories.create') }}" class="btn btn-success ">Agregar</a>
-                            {{-- <div class="btn-group">
-                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a href="{{route('categories.create')}}" class="dropdown-item">Agregar</a> --}}
-                            {{-- <button class="dropdown-item" type="button">Another action</button>
-                              <button class="dropdown-item" type="button">Something else here</button> --}}
-                            {{-- </div>
-                          </div> --}}
+
+                            <a href="{{ route('categories.create') }}" class="btn btn-secondary">Agregar</a>
+
                         </div>
 
                         <div class="table-responsive">
@@ -64,7 +45,8 @@
                                         <tr>
                                             <th scope="row">{{ $key + 1 }}</th>
                                             <td>
-                                                <a href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>
+                                                <a
+                                                    href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>
                                             </td>
                                             <td>{{ $category->description }}</td>
                                             <td style="width: 50px;">

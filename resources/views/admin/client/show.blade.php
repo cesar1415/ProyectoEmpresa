@@ -75,12 +75,12 @@
                                                         {{ $client->name }}
                                                     </p>
                                                     <hr>
-                                                    <strong><i class="fas fa-address-card mr-1"></i> Numero de DNI</strong>
+                                                    <strong><i class="fas fa-address-card mr-1"></i> Número de DNI</strong>
                                                     <p class="text-muted">
                                                         {{ $client->dni }}
                                                     </p>
                                                     <hr>
-                                                    <strong><i class="fas fa-address-card mr-1"></i> Numero de RUC</strong>
+                                                    <strong><i class="fas fa-address-card mr-1"></i> Número de RUC</strong>
                                                     <p class="text-muted">
                                                         {{ $client->ruc }}
                                                     </p>

@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Configuración de impresora')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')

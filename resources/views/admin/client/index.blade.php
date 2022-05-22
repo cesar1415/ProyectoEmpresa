@@ -1,16 +1,5 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de clientes')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
-
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -33,18 +22,12 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Clientes</h4>
-                            {{-- <i class="fas fa-ellipsis-v"></i> --}}
-                            <div class="btn-group">
-                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{{ route('clients.create') }}" class="dropdown-item">Agregar</a>
 
-                                </div>
-                            </div>
+
+                            <a href="{{ route('clients.create') }}" class="btn btn-secondary">Agregar</a>
+
                         </div>
 
                         <div class="table-responsive">
@@ -55,7 +38,7 @@
                                         <th>Nombre</th>
                                         <th>DNI</th>
                                         <th>Telefono / Celular</th>
-                                        <th>Correo electronico</th>
+                                        <th>Correo electrónico</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>

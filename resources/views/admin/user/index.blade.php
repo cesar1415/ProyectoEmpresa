@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de usuarios del sistema')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -35,16 +25,11 @@
 
                         <div class="d-flex justify-content-between">
                             <h4 class="card-title">Usuarios del sistema</h4>
-                            {{-- <i class="fas fa-ellipsis-v"></i> --}}
-                            <div class="btn-group">
-                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{{ route('users.create') }}" class="dropdown-item">Agregar</a>
 
-                                </div>
-                            </div>
+
+                            <a href="{{ route('users.create') }}" class="btn btn-secondary"> Agregar</a>
+
+
                         </div>
 
                         <div class="table-responsive">
@@ -53,7 +38,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Nombre</th>
-                                        <th>Correo electronico</th>
+                                        <th>Correo electrónico</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>

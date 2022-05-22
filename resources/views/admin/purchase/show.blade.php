@@ -53,15 +53,15 @@
                                     <thead>
                                         <tr>
                                             <th>Producto</th>
-                                            <th>Precio (PEN)</th>
+                                            <th>Precio (COP)</th>
                                             <th>Cantidad</th>
-                                            <th>SubTotal (PEN)</th>
+                                            <th>SubTotal (COP)</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th colspan="3">
-                                                <p align="right">SUBTOTAL:</p>
+                                                <p align="right">Subtotal:</p>
                                             </th>
                                             <th>
                                                 <p align="right">s/{{ number_format($subtotal, 2) }}</p>
@@ -69,15 +69,16 @@
                                         </tr>
                                         <tr>
                                             <th colspan="3">
-                                                <p align="right">TOTAL IMPUESTO ({{ $purchase->tax }}%):</p>
+                                                <p align="right">Total impuesto ({{ $purchase->tax }}%):</p>
                                             </th>
                                             <th>
-                                                <p align="right">s/{{ number_format(($subtotal * $purchase->tax) / 100, 2) }}</p>
+                                                <p align="right">
+                                                    s/{{ number_format(($subtotal * $purchase->tax) / 100, 2) }}</p>
                                             </th>
                                         </tr>
                                         <tr>
                                             <th colspan="3">
-                                                <p align="right">TOTAL:</p>
+                                                <p align="right">Total:</p>
                                             </th>
                                             <th>
                                                 <p align="right">s/{{ number_format($purchase->total, 2) }}</p>

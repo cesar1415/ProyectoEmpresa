@@ -1,210 +1,237 @@
 <!DOCTYPE>
 <html>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reporte de compra</title>
 <style>
+    @page {
+        margin: 0cm 0cm;
+        font-family: sans-serif;
+
+    }
+
     body {
-        /*position: relative;*/
-        /*width: 16cm;  */
-        /*height: 29.7cm; */
-        /*margin: 0 auto; */
-        /*color: #555555;*/
-        /*background: #FFFFFF; */
-        font-family: Arial, sans-serif;
+        margin: 3cm 2cm 2cm;
+    }
+
+    header {
+        position: fixed;
+        top: 0cm;
+        left: 0cm;
+        right: 0cm;
+        height: 2cm;
+        background-color: #392C70;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+        font-size: 24px;
+        padding-top: 15px;
+        margin: 0;
+    }
+
+    header p {
+        font-size: 12px;
+    }
+
+    section table tbody section table tbody ul {
+        list-style: none;
+        font-size: 24px;
+        font-weight: 'bold';
+        font-family: sans-serif;
+    }
+
+    section table tbody ul li {
+        list-style: none;
         font-size: 14px;
-        /*font-family: SourceSansPro;*/
+        margin-bottom: 5px;
+        line-height: 15px;
+        font-family: sans-serif;
+        margin-top: 5px;
+
     }
-    #datos {
-        float: left;
-        margin-top: 0%;
-        margin-left: 2%;
-        margin-right: 2%;
-        /*text-align: justify;*/
+
+    section table tbody ul li p {
+        font-size: 16px;
+        font-weight: 600;
+        font-family: sans-serif;
     }
-    #encabezado {
-        text-align: center;
-        margin-left: 35%;
-        margin-right: 35%;
-        font-size: 15px;
-    }
-    #fact {
-        /*position: relative;*/
-        float: right;
-        margin-top: 2%;
-        margin-left: 2%;
-        margin-right: 2%;
-        font-size: 20px;
-        background: #33AFFF;
-    }
-    section {
-        clear: left;
-    }
-    #cliente {
-        text-align: left;
-    }
-    #faproveedor {
-        width: 40%;
-        border-collapse: collapse;
-        border-spacing: 0;
-        margin-bottom: 15px;
-    }
-    #fac,
-    #fv,
-    #fa {
-        color: #FFFFFF;
-        font-size: 15px;
-    }
-    #faproveedor thead {
-        padding: 20px;
-        background: #33AFFF;
-        text-align: left;
-        border-bottom: 1px solid #FFFFFF;
-    }
-    #faccomprador {
+
+    .check {
         width: 100%;
-        border-collapse: collapse;
-        border-spacing: 0;
-        margin-bottom: 15px;
     }
-    #faccomprador thead {
-        padding: 20px;
-        background: #33AFFF;
+
+    .check thead tr {
+        height: 40px;
+        border: 1px solid #000 !important;
+    }
+
+    .check thead tr th {
+
+        padding: 5px;
+        text-align: left;
+
+    }
+
+    .check tbody tr {
+        border: 1px solid #555;
+    }
+
+    .check tbody tr td {
+        border: 1px solid #000 !important;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .check tfoot tr td {
+
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+
+    footer {
+        position: fixed;
+        bottom: 0cm;
+        left: 0cm;
+        right: 0cm;
+        height: 2cm;
+        background-color: #392C70;
+        color: white;
         text-align: center;
-        border-bottom: 1px solid #FFFFFF;
+        line-height: 35px;
     }
-    #facproducto {
-        width: 100%;
-        border-collapse: collapse;
-        border-spacing: 0;
-        margin-bottom: 15px;
+
+
+    /* Print Styles */
+    @media print {
+
+        body>*:not(.print) {
+            display: none;
+        }
+
+        /* 	Remove the header and footer text and urls the browser places  */
+        @page {
+            margin: 0;
+        }
+
     }
-    #facproducto thead {
-        padding: 20px;
-        background: #33AFFF;
-        text-align: center;
-        border-bottom: 1px solid #FFFFFF;
-    }
+
 </style>
 
 <body>
 
     <header>
-        {{--  <div id="logo">
-            <img src="img/logo.png" alt="" id="imagen">
-        </div>  --}}
-        <div>
-            <table id="datos">
-                <thead>
-                    <tr>
-                        <th id="">DATOS DEL PROVEEDOR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>
-                            <p id="proveedor">Nombre: {{$purchase->provider->name}}<br>
-                                {{--  {{$purchase->provider->document_type}}-COMPRA: {{$purchase->provider->document_number}}<br>  --}}
-                                Dirección: {{$purchase->provider->address}}<br>
-                                Teléfono: {{$purchase->provider->phone}}<br>
-                                Email: {{$purchase->provider->email}}</p>
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div id="fact">
-            {{--  <p>{{$purchase->provider->document_type}} COMPRA<br />
-                {{$purchase->provider->document_number}}</p>  --}}
-                <p>NUMERO DE COMPRA<br />
-                    {{$purchase->id}}</p>
-        </div>
+        REPORTE DE COMPRA
+        <p>Número #{{ $purchase->id }}</p>
     </header>
     <br>
 
+    <section class="front">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        DATOS DEL PROVEEDOR
+                        <ul>
+                            <li>
+                                <p>Nombre: </p>{{ $purchase->provider->name }}
 
-    <br>
-    <section>
-        <div>
-            <table id="faccomprador">
-                <thead>
-                    <tr id="fv">
-                        <th>COMPRADOR</th>
-                        <th>FECHA COMPRA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{$purchase->user->name}}</td>
-                        <td>{{$purchase->created_at}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                            </li>
+                            <li>
+                                <p>
+                                    Dirección: </p> {{ $purchase->provider->address }}
+
+                            </li>
+                            <li>
+                                <p>
+                                    Teléfono: </p> {{ $purchase->provider->phone }}
+
+                            </li>
+                            <li>
+                                <p>
+                                    Email: </p> {{ $purchase->provider->email }}
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        DATOS DEL COMPRADOR
+                        <ul>
+                            <li>
+                                <p>Nombre: </p>{{ $purchase->user->name }}
+
+                            </li>
+                            <li>
+                                <p> Telefono: </p> ----
+
+                            </li>
+                            <li>
+                                <p> Email: </p>{{ $purchase->user->email }}
+
+                            </li>
+                            <li>
+                                <p> Fecha de compra: </p>{{ $purchase->created_at }}
+
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </section>
+
     <br>
     <section>
-        <div>
-            <table id="facproducto">
-                <thead>
-                    <tr id="fa">
-                        <th>CANTIDAD</th>
-                        <th>PRODUCTO</th>
-                        <th>PRECIO COMPRA (PEN)</th>
-                        <th>SUBTOTAL (PEN)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($purchaseDetails as $purchaseDetail)
+        <table class="check">
+            <thead>
+                <tr>
+                    <th colspan="2">Cantidad</th>
+                    <th colspan="1">Producto</th>
+                    <th colspan="1" class="text-right">Precio Compra </th>
+                    <th colspan="1" class="text-right">Subtotal </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($purchaseDetails as $purchaseDetail)
                     <tr>
-                        <td>{{$purchaseDetail->quantity}}</td>
-                        <td>{{$purchaseDetail->product->name}}</td>
-                        <td>s/ {{$purchaseDetail->price}}</td>
-                        <td>s/ {{number_format($purchaseDetail->quantity*$purchaseDetail->price,2)}}</td>
+                        <td colspan="2">{{ $purchaseDetail->quantity }}</td>
+                        <td colspan="1">{{ $purchaseDetail->product->name }}</td>
+                        <td colspan="1" class="text-right">${{ $purchaseDetail->price }}</td>
+                        <td colspan="1" class="text-right">
+                            ${{ number_format($purchaseDetail->quantity * $purchaseDetail->price, 2) }}</td>
                     </tr>
-                    @endforeach
-                </tbody>
-                <tfoot>
-
-                    <tr>
-                        <th colspan="3">
-                            <p align="right">SUBTOTAL:</p>
-                        </th>
-                        <td>
-                            <p align="right">s/ {{number_format($subtotal,2)}}<p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th colspan="3">
-                            <p align="right">TOTAL IMPUESTO ({{$purchase->tax}}%):</p>
-                        </th>
-                        <td>
-                            <p align="right">s/ {{number_format($subtotal*$purchase->tax/100,2)}}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th colspan="3">
-                            <p align="right">TOTAL PAGAR:</p>
-                        </th>
-                        <td>
-                            <p align="right">s/ {{number_format($purchase->total,2)}}<p>
-                        </td>
-                    </tr>
-
-                </tfoot>
-            </table>
-        </div>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">
+                        <p align="left">Subtotal:</p>
+                        <p align="left">Total impuesto ({{ $purchase->tax }}%):</p>
+                        <p align="left">Pago total:</p>
+                    </th>
+                    <td>
+                        <p align="left">${{ number_format($subtotal, 2) }}
+                        </p>
+                        <p align="left">${{ number_format(($subtotal * $purchase->tax) / 100, 2) }}</p>
+                        <p align="left">${{ number_format($purchase->total, 2) }}
+                        </p>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </section>
     <br>
     <br>
     <footer>
-        <!--puedes poner un mensaje aqui-->
-        <div id="datos">
-            <p id="encabezado">
-                {{--  <b>{{$company->name}}</b><br>{{$company->description}}<br>Telefono:{{$company->telephone}}<br>Email:{{$company->email}}  --}}
-            </p>
+        <div>
+            Copyright &copy;
+            2020
+            Todos los derechos reservados
         </div>
     </footer>
 </body>
