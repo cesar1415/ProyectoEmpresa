@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Correo electronico</label>
+                            <label for="email">Correo electrónico</label>
                             <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId"
                                 value="{{ old('email') }}">
                         </div>

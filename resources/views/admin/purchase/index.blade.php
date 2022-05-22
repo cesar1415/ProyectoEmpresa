@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de compras')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -35,17 +25,11 @@
 
                         <div class="d-flex justify-content-between">
                             <h4 class="card-title">Compras</h4>
-                            {{-- <i class="fas fa-ellipsis-v"></i> --}}
-                            <div class="btn-group">
-                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{{ route('purchases.create') }}" class="dropdown-item">Registrar</a>
-                                    {{-- <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button> --}}
-                                </div>
-                            </div>
+
+
+                            <a href="{{ route('purchases.create') }}" class="btn btn-secondary"> Registrar</a>
+
+
                         </div>
 
                         <div class="table-responsive">

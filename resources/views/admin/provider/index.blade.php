@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de proveedors')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -35,9 +25,7 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Proveedores</h4>
-
-                            <a href="{{ route('providers.create') }}" class="btn btn-success ">Agregar</a>
-
+                            <a href="{{ route('providers.create') }}" class="btn btn-secondary">Agregar</a>
                         </div>
 
                         <div class="table-responsive">
@@ -46,7 +34,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Nombre</th>
-                                        <th>Correo electronico</th>
+                                        <th>Correo electrónico</th>
                                         <th>Telefono/Celular</th>
                                         <th>Acciones</th>
                                     </tr>

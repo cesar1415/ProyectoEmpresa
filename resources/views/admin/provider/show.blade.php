@@ -66,7 +66,7 @@
                                                 {{ $provider->name }}
                                             </p>
                                             <hr>
-                                            <strong><i class="fas fa-address-card mr-1"></i> Numero de RUC</strong>
+                                            <strong><i class="fas fa-address-card mr-1"></i> Número de RUC</strong>
                                             <p class="text-muted">
                                                 {{ $provider->ruc_number }}
                                             </p>

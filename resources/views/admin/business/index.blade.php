@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Gestión de empresa')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -138,7 +128,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="ruc">Numero de RUC</label>
+                        <label for="ruc">Número de RUC</label>
                         <input type="text" class="form-control" name="ruc" id="ruc" value="{{ $business->ruc }}"
                             aria-describedby="helpId">
                     </div>

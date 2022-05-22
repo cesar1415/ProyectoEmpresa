@@ -1,15 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Panel administrador')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -31,7 +22,7 @@
                             <div class="float-right">
                                 <i class="fas fa-cart-arrow-down fa-4x"></i>
                             </div>
-                            <div class="text-value h4"><strong>PEN {{ $total->totalcompra }} (MES ACTUAL)</strong>
+                            <div class="text-value h4"><strong>COP {{ $total->totalcompra }} (MES ACTUAL)</strong>
                             </div>
                             <div class="h3">Compras</div>
                         </div>
@@ -50,7 +41,7 @@
                             <div class="float-right">
                                 <i class="fas fa-shopping-cart fa-4x"></i>
                             </div>
-                            <div class="text-value h4"><strong>PEN {{ $total->totalventa }} (MES ACTUAL) </strong>
+                            <div class="text-value h4"><strong>COP {{ $total->totalventa }} (MES ACTUAL) </strong>
                             </div>
                             <div class="h3">Ventas</div>
                         </div>
@@ -162,16 +153,16 @@
                 type: 'line',
                 data: {
                     labels: [<?php foreach ($comprasmes as $reg) {
-    setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
-    $mes_traducido = strftime('%B', strtotime($reg->mes));
+                        setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
+                        $mes_traducido = strftime('%B', strtotime($reg->mes));
 
-    echo '"' . $mes_traducido . '",';
-} ?>],
+                        echo '"' . $mes_traducido . '",';
+                    } ?>],
                     datasets: [{
                         label: 'Compras',
                         data: [<?php foreach ($comprasmes as $reg) {
-    echo '' . $reg->totalmes . ',';
-} ?>],
+                            echo '' . $reg->totalmes . ',';
+                        } ?>],
 
                         borderColor: 'rgba(255, 99, 132, 1)',
                         borderWidth: 3
@@ -192,16 +183,16 @@
                 type: 'line',
                 data: {
                     labels: [<?php foreach ($ventasmes as $reg) {
-    setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
-    $mes_traducido = strftime('%B', strtotime($reg->mes));
+                        setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
+                        $mes_traducido = strftime('%B', strtotime($reg->mes));
 
-    echo '"' . $mes_traducido . '",';
-} ?>],
+                        echo '"' . $mes_traducido . '",';
+                    } ?>],
                     datasets: [{
                         label: 'Ventas',
                         data: [<?php foreach ($ventasmes as $reg) {
-    echo '' . $reg->totalmes . ',';
-} ?>],
+                            echo '' . $reg->totalmes . ',';
+                        } ?>],
                         backgroundColor: 'rgba(20, 204, 20, 1)',
                         borderColor: 'rgba(54, 162, 235, 0.2)',
                         borderWidth: 1
@@ -222,15 +213,15 @@
                 type: 'bar',
                 data: {
                     labels: [<?php foreach ($ventasdia as $ventadia) {
-    $dia = $ventadia->dia;
+                        $dia = $ventadia->dia;
 
-    echo '"' . $dia . '",';
-} ?>],
+                        echo '"' . $dia . '",';
+                    } ?>],
                     datasets: [{
                         label: 'Ventas',
                         data: [<?php foreach ($ventasdia as $reg) {
-    echo '' . $reg->totaldia . ',';
-} ?>],
+                            echo '' . $reg->totaldia . ',';
+                        } ?>],
                         backgroundColor: 'rgba(20, 204, 20, 1)',
                         borderColor: 'rgba(54, 162, 235, 0.2)',
                         borderWidth: 1

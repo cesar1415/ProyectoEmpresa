@@ -10,13 +10,13 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Edicion de proveedores
+                Edición de proveedores
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('providers.index') }}">Proveedores</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Edicion de proveedores</li>
+                    <li class="breadcrumb-item active" aria-current="page">Edición de proveedores</li>
                 </ol>
             </nav>
         </div>
@@ -26,7 +26,7 @@
                     <div class="card-body">
 
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title">Edicion de proveedores</h4>
+                            <h4 class="card-title">Edición de proveedores</h4>
                         </div>
 
                         {!! Form::model($provider, ['route' => ['providers.update', $provider], 'method' => 'PUT']) !!}
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group @if ($errors->has('email')) has-danger @endif">
-                            <label for="email">Correo electronico</label>
+                            <label for="email">Correo electrónico</label>
                             <input type="email"
                                 class="form-control @if ($errors->has('email')) form-control-danger @endif"
                                 name="email" id="email" value="{{ $provider->email }}" aria-describedby="emailHelpId"
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group  @if ($errors->has('ruc_number')) has-danger @endif">
-                            <label for="ruc_number">Numero de RUC</label>
+                            <label for="ruc_number">Número de RUC</label>
                             <input type="number"
                                 class="form-control @if ($errors->has('ruc_number')) form-control-danger @endif"
                                 name="ruc_number" id="ruc_number" value="{{ $provider->ruc_number }}"
@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="form-group @if ($errors->has('phone')) has-danger @endif">
-                            <label for="phone">Numero de contacto</label>
+                            <label for="phone">Número de contacto</label>
                             <input type="numbre"
                                 class="form-control  @if ($errors->has('phone')) form-control-danger @endif"
                                 name="phone" id="phone" value="{{ $provider->phone }}" aria-describedby="helpId">

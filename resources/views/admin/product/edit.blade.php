@@ -10,13 +10,13 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Edicion de producto
+                Edición de producto
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Productos</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Edicion de producto</li>
+                    <li class="breadcrumb-item active" aria-current="page">Edición de producto</li>
                 </ol>
             </nav>
         </div>
@@ -53,7 +53,7 @@
 
 
                         <div class="form-group">
-                            <label for="category_id">Categoria</label>
+                            <label for="category_id">Categoría</label>
                             <select class="form-control" name="category_id" id="category_id">
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}" @if ($category->id == $product->category_id) selected @endif>

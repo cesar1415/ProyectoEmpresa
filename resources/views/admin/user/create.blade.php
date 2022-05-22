@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Registro de usuario')
-@section('styles')
-@endsection
+
 @section('options')
 @endsection
 @section('preference')

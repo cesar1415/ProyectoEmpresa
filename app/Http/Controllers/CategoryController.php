@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Category\StoreRequest;
 use App\Http\Requests\Category\UpdateRequest;
 use Illuminate\Validation\ValidationException;
+
 class CategoryController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('can:categories.create')->only(['create','store']);
+        $this->middleware('can:categories.create')->only(['create', 'store']);
         $this->middleware('can:categories.index')->only(['index']);
-        $this->middleware('can:categories.edit')->only(['edit','update']);
+        $this->middleware('can:categories.edit')->only(['edit', 'update']);
         $this->middleware('can:categories.show')->only(['show']);
         $this->middleware('can:categories.destroy')->only(['destroy']);
     }
@@ -31,13 +32,12 @@ class CategoryController extends Controller
     {
 
         $attr = $request->validated();
-        if($attr) {
+        if ($attr) {
             Category::create($request->all());
-            return redirect()->route('categories.index',compact("attr"))->with('message', 'Categoria creada');
-        }else {
-            return redirect()->route('categories.index',compact("attr"))->with('error', 'Error al crear la categoria');
+            return redirect()->route('categories.index', compact("attr"))->with('message', 'Categoría creada');
+        } else {
+            return redirect()->route('categories.index', compact("attr"))->with('error', 'Error al crear la categoria');
         }
-
     }
     public function show(Category $category)
     {
@@ -50,18 +50,16 @@ class CategoryController extends Controller
     public function update(UpdateRequest $request, Category $category)
     {
         $attr = $request->validated();
-        if($attr) {
+        if ($attr) {
             $category->update($request->all());
-            return redirect()->route('categories.index',compact("attr"))->with('message', 'Categoria actualizada');
-        }else {
-            return redirect()->route('categories.index',compact("attr"))->with('error', 'Error al actualizar la categoria');
+            return redirect()->route('categories.index', compact("attr"))->with('message', 'Categoría actualizada');
+        } else {
+            return redirect()->route('categories.index', compact("attr"))->with('error', 'Error al actualizar la categoria');
         }
-
-
     }
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index')->with('message', 'Categoria eliminada');
+        return redirect()->route('categories.index')->with('message', 'Categoría eliminada');
     }
 }

@@ -67,7 +67,7 @@
                                     </p>
                                     <p class="clearfix">
                                         <span class="float-left">
-                                            Categoria
+                                            Categoría
                                         </span>
                                         <span class="float-right text-muted">
                                             {{-- PRODUCTOS POR CATEGORIAS --}}

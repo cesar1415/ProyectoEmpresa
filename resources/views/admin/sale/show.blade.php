@@ -33,7 +33,8 @@
                         <div class="form-group row">
                             <div class="col-md-4 text-center">
                                 <label class="form-control-label"><strong>Cliente</strong></label>
-                                <p><a href="{{ route('clients.show', $sale->client) }}">{{ $sale->client->name }}</a></p>
+                                <p><a href="{{ route('clients.show', $sale->client) }}">{{ $sale->client->name }}</a>
+                                </p>
                             </div>
                             <div class="col-md-4 text-center">
                                 <label class="form-control-label"><strong>Vendedor</strong></label>
@@ -52,37 +53,38 @@
                                     <thead>
                                         <tr>
                                             <th>Producto</th>
-                                            <th>Precio Venta (PEN)</th>
-                                            <th>Descuento(PEN)</th>
+                                            <th>Precio Venta (COP)</th>
+                                            <th>Descuento(COP)</th>
                                             <th>Cantidad</th>
-                                            <th>SubTotal(PEN)</th>
+                                            <th>SubTotal(COP)</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
 
                                         <tr>
                                             <th colspan="4">
-                                                <p align="right">SUBTOTAL:</p>
+                                                <p align="right">Subtotal:</p>
                                             </th>
                                             <th>
-                                                <p align="right">s/{{ number_format($subtotal, 2) }}</p>
+                                                <p align="right">${{ number_format($subtotal, 2) }}</p>
                                             </th>
                                         </tr>
 
                                         <tr>
                                             <th colspan="4">
-                                                <p align="right">TOTAL IMPUESTO ({{ $sale->tax }}%):</p>
+                                                <p align="right">Total impuesto ({{ $sale->tax }}%):</p>
                                             </th>
                                             <th>
-                                                <p align="right">s/{{ number_format(($subtotal * $sale->tax) / 100, 2) }}</p>
+                                                <p align="right">${{ number_format(($subtotal * $sale->tax) / 100, 2) }}
+                                                </p>
                                             </th>
                                         </tr>
                                         <tr>
                                             <th colspan="4">
-                                                <p align="right">TOTAL:</p>
+                                                <p align="right">Total:</p>
                                             </th>
                                             <th>
-                                                <p align="right">s/{{ number_format($sale->total, 2) }}</p>
+                                                <p align="right">${{ number_format($sale->total, 2) }}</p>
                                             </th>
                                         </tr>
 
@@ -91,10 +93,10 @@
                                         @foreach ($saleDetails as $saleDetail)
                                             <tr>
                                                 <td>{{ $saleDetail->product->name }}</td>
-                                                <td>s/ {{ $saleDetail->price }}</td>
+                                                <td>${{ $saleDetail->price }}</td>
                                                 <td>{{ $saleDetail->discount }} %</td>
                                                 <td>{{ $saleDetail->quantity }}</td>
-                                                <td>s/{{ number_format($saleDetail->quantity * $saleDetail->price -($saleDetail->quantity * $saleDetail->price * $saleDetail->discount) / 100,2) }}
+                                                <td>${{ number_format($saleDetail->quantity * $saleDetail->price - ($saleDetail->quantity * $saleDetail->price * $saleDetail->discount) / 100, 2) }}
                                                 </td>
                                             </tr>
                                         @endforeach

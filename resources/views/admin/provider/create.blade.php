@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group @if ($errors->has('email')) has-danger @endif">
-                            <label for="email">Correo electronico</label>
+                            <label for="email">Correo electrónico</label>
                             <input type="email"
                                 class="form-control  @if ($errors->has('email')) form-control-danger @endif"
                                 name="email" id="email" aria-describedby="emailHelpId" placeholder="ejemplo@gmail.com">
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group @if ($errors->has('ruc_number')) has-danger @endif">
-                            <label for="ruc_number">Numero de RUC</label>
+                            <label for="ruc_number">Número de RUC</label>
                             <input type="number"
                                 class="form-control  @if ($errors->has('ruc_number')) form-control-danger @endif"
                                 name="ruc_number" id="ruc_number" aria-describedby="helpId">
@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="form-group @if ($errors->has('phone')) has-danger @endif">
-                            <label for="phone">Numero de contacto</label>
+                            <label for="phone">Número de contacto</label>
                             <input type="number"
                                 class="form-control  @if ($errors->has('phone')) form-control-danger @endif"
                                 name="phone" id="phone" aria-describedby="helpId">

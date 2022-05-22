@@ -1,16 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Reporte de ventas')
-@section('styles')
-    <style type="text/css">
-        .unstyled-button {
-            border: none;
-            padding: 0;
-            background: none;
-        }
 
-    </style>
-
-@endsection
 @section('options')
 @endsection
 @section('preference')
@@ -79,12 +69,7 @@
                                             <td>{{ $sale->status }}</td>
                                             <td style="width: 50px;">
 
-                                                {{-- <a class="jsgrid-button jsgrid-edit-button" href="{{route('sales.edit', $sale)}}" title="Editar">
-                                            <i class="far fa-edit"></i>
-                                        </a> --}}
-                                                {{-- <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button> --}}
+
 
                                                 <a href="{{ route('sales.pdf', $sale) }}"
                                                     class="jsgrid-button jsgrid-edit-button"><i

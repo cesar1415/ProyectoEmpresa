@@ -49,12 +49,12 @@
             <a href="{{ url('/forgot_password') }}" class="auth-link text-black">Olvido su contraseña?</a>
         </div>
         <div class="my-3">
-            <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">INICIAR
-                SESIÓN</button>
+            <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Iniciar
+                Sesión</button>
         </div>
         <div class="my-3">
             <a href="{{ route('register') }}" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                type="submit">REGISTRARSE</a>
+                type="submit">Crear una cuenta</a>
         </div>
 
 
