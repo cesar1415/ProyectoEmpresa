@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between mb-3">
                             <h4 class="card-title">Usuarios del sistema</h4>
 
 
