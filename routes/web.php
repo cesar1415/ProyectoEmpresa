@@ -40,8 +40,7 @@ Route::resource('sales', 'SaleController')->names('sales')->except([
     'edit', 'update', 'destroy'
 ]);
 
-Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.day');
-Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports.date');
+
 
 Route::post('sales/report_results', 'ReportController@report_results')->name('report.results');
 
@@ -121,6 +120,7 @@ Route::resource('roles', 'RoleController')->names('roles');
 
 /**************/
 
-
+Route::get('reports_day', 'ReportController@reports_day')->name('reports.day');
+Route::get('reports_date', 'ReportController@reports_date')->name('reports.date');
 
 Route::get('/home', 'HomeController@index')->name('home');
