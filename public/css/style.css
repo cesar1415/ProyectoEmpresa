@@ -18592,6 +18592,10 @@ input:focus {
   color: #ffffff;
 }
 
+.name {
+    word-break: break-all;
+}
+
 .sidebar .nav .nav-item.nav-profile .profile-name .designation {
   color: #686868;
   font-size: .75rem;
